@@ -1,0 +1,16 @@
+fold,class,train_count,validation_count
+1,bus,534,266
+1,car,534,266
+1,cyclist,534,266
+1,motorcycle,534,266
+1,pedestrian,269,531
+2,bus,533,267
+2,car,533,267
+2,cyclist,533,267
+2,motorcycle,533,267
+2,pedestrian,544,256
+3,bus,533,267
+3,car,533,267
+3,cyclist,533,267
+3,motorcycle,533,267
+3,pedestrian,787,13

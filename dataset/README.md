@@ -19,8 +19,9 @@ Le notebook vérifie les images actuelles, pas l’historique de préparation.
 Le dernier contrôle a trouvé zéro image illisible, zéro doublon exact,
 trois paires similaires au sein de splits et une alerte d’exposition.
 Deux paires de piétons semblent représenter des images proches de la même
-personne. Elles restent à traiter ; aucune image n’a été supprimée dans cet
-audit. La revue des étiquettes n’est pas exhaustive.
+personne. La classification les conserve dans leurs groupes source avec une
+limite documentée ; aucune image n’est supprimée. La revue des étiquettes
+n’est pas exhaustive.
 
 `demo_scenes/` contient 20 scènes de rue séparées. Certaines partagent leurs
 sources avec train : **ne pas les utiliser pour mesurer les performances**.
@@ -38,5 +39,38 @@ conserve le cahier des charges d’origine.
 
 La classe `cyclist` comprend les vélos seuls ou avec cycliste, conformément au
 guide ; `motorcycle` comprend motos et scooters. Certaines images de deux-roues
-sont des photos de produit. La classification et l’évaluation des modèles
-restent à réaliser.
+sont des photos de produit. La classification et l’évaluation sont désormais
+présentées dans `../notebooks/Livrable_2_Preparation_Selection_Entrainement.ipynb` et
+`../backend/models/livrable2/RESULTATS.md`. Les paires similaires sont conservées avec
+protection par groupes et limites documentées ; aucune image n’est supprimée.
+
+## Utilisation dans le livrable 2 étendu
+
+Le protocole `expanded-v2` compare dix modèles sur les mêmes descripteurs HOG/HSV,
+avec trois sélections de variables et deux stratégies de gestion du déséquilibre,
+soit 60 configurations initiales. Les trois modèles présélectionnés sont réglés
+sur une validation croisée à trois plis par groupes. La sélection du modèle final
+utilise le développement uniquement ; le test existant sert ensuite au bilan des
+dix finalistes.
+
+Les transformations, les sélections et les éventuels rééchantillonnages sont
+ajustés sur le train de chaque expérience. La validation et le test ne sont
+jamais rééquilibrés. La courbe d’apprentissage conserve également les groupes
+entiers dans des sous-ensembles emboîtés du train.
+
+La correction de k-NN, GaussianNB, HistGradientBoosting et MLP duplique uniquement
+des lignes d’entraînement en mémoire. Pour HistGradientBoosting, ce choix évite
+le surcoût observé du calcul pondéré des histogrammes ; les autres modèles
+compatibles utilisent des poids de classes. Aucun fichier image n’est dupliqué.
+
+Les piétons ne disposent que de trois groupes de développement (531, 256 et
+13 images) et de trois groupes test (144, 45 et 11 images). Les supports de
+validation croisée sont donc très différents. Les intervalles bootstrap
+rééchantillonnent les groupes test entiers, y compris ceux qui contiennent
+plusieurs classes, et restent exploratoires. Les tirages sans certaines classes
+sont conservés avec une définition fixe des cinq classes dans les scores.
+
+Le test a déjà été utilisé dans les versions précédentes du projet : un nouveau
+jeu externe serait nécessaire pour une confirmation indépendante. Les détails
+du protocole, les fichiers produits et les limites sont décrits dans le
+[README du projet](../README.md) et dans le notebook du livrable 2.

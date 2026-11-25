@@ -1,0 +1,89 @@
+{
+  "seed": 42,
+  "target_validation_fraction_of_development": 0.15,
+  "method": "1024 partitions de groupes à graine fixe ; choix par effectifs uniquement. Support validation minimal = moitié de la cible 15 % par classe ; train >= 50 % par classe.",
+  "counts": [
+    {
+      "split": "test",
+      "class": "bus",
+      "count": 200
+    },
+    {
+      "split": "test",
+      "class": "car",
+      "count": 200
+    },
+    {
+      "split": "test",
+      "class": "cyclist",
+      "count": 200
+    },
+    {
+      "split": "test",
+      "class": "motorcycle",
+      "count": 200
+    },
+    {
+      "split": "test",
+      "class": "pedestrian",
+      "count": 200
+    },
+    {
+      "split": "train",
+      "class": "bus",
+      "count": 680
+    },
+    {
+      "split": "train",
+      "class": "car",
+      "count": 680
+    },
+    {
+      "split": "train",
+      "class": "cyclist",
+      "count": 681
+    },
+    {
+      "split": "train",
+      "class": "motorcycle",
+      "count": 677
+    },
+    {
+      "split": "train",
+      "class": "pedestrian",
+      "count": 544
+    },
+    {
+      "split": "validation",
+      "class": "bus",
+      "count": 120
+    },
+    {
+      "split": "validation",
+      "class": "car",
+      "count": 120
+    },
+    {
+      "split": "validation",
+      "class": "cyclist",
+      "count": 119
+    },
+    {
+      "split": "validation",
+      "class": "motorcycle",
+      "count": 123
+    },
+    {
+      "split": "validation",
+      "class": "pedestrian",
+      "count": 256
+    }
+  ],
+  "group_overlap": 0,
+  "groups_per_split": {
+    "test": 586,
+    "train": 2580,
+    "validation": 456
+  },
+  "actual_validation_fraction": 0.1845
+}

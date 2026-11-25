@@ -1,0 +1,31 @@
+selection,model,balancing,parameters,fold,validation_f1_macro,validation_accuracy,fit_seconds,fit_samples,convergence_warning,warnings,iterations,train_samples,validation_samples,validation_min_class_count
+Toutes,SVM,Sans_correction,"{""C"": 1}",1,0.861146525380122,0.877742946708464,4.024,2405,False,,1024,2405,1595,266
+Toutes,SVM,Sans_correction,"{""C"": 1}",2,0.8392071860343366,0.8383685800604229,4.851,2676,False,,976,2676,1324,256
+Toutes,SVM,Sans_correction,"{""C"": 1}",3,0.7628383351040027,0.818686401480111,6.121,2919,False,,979,2919,1081,13
+Toutes,SVM,Sans_correction,"{""C"": 10}",1,0.8590231539612871,0.8752351097178683,5.582,2405,False,,1707,2405,1595,266
+Toutes,SVM,Sans_correction,"{""C"": 10}",2,0.8397819079832732,0.8383685800604229,4.873,2676,False,,1588,2676,1324,256
+Toutes,SVM,Sans_correction,"{""C"": 10}",3,0.8045643272263107,0.8362627197039778,5.84,2919,False,,1612,2919,1081,13
+Toutes,SVM,Sans_correction,"{""C"": 30}",1,0.8590231539612871,0.8752351097178683,3.975,2405,False,,1707,2405,1595,266
+Toutes,SVM,Sans_correction,"{""C"": 30}",2,0.8397819079832732,0.8383685800604229,5.086,2676,False,,1588,2676,1324,256
+Toutes,SVM,Sans_correction,"{""C"": 30}",3,0.8045643272263107,0.8362627197039778,7.456,2919,False,,1612,2919,1081,13
+Toutes,HistGradientBoosting,Sans_correction,"{""learning_rate"": 0.05, ""max_leaf_nodes"": 15}",1,0.8365089572395629,0.8507836990595611,69.531,2405,False,,100,2405,1595,266
+Toutes,HistGradientBoosting,Sans_correction,"{""learning_rate"": 0.05, ""max_leaf_nodes"": 15}",2,0.8318539854088405,0.8308157099697885,70.728,2676,False,,100,2676,1324,256
+Toutes,HistGradientBoosting,Sans_correction,"{""learning_rate"": 0.05, ""max_leaf_nodes"": 15}",3,0.7447905443190682,0.8011100832562442,73.192,2919,False,,100,2919,1081,13
+Toutes,HistGradientBoosting,Sans_correction,"{""learning_rate"": 0.05, ""max_leaf_nodes"": 31}",1,0.8375261050221761,0.8551724137931035,124.26,2405,False,,100,2405,1595,266
+Toutes,HistGradientBoosting,Sans_correction,"{""learning_rate"": 0.05, ""max_leaf_nodes"": 31}",2,0.8225148116780975,0.8217522658610272,123.186,2676,False,,100,2676,1324,256
+Toutes,HistGradientBoosting,Sans_correction,"{""learning_rate"": 0.05, ""max_leaf_nodes"": 31}",3,0.7275427765147378,0.790009250693802,118.579,2919,False,,100,2919,1081,13
+Toutes,HistGradientBoosting,Sans_correction,"{""learning_rate"": 0.1, ""max_leaf_nodes"": 15}",1,0.8464730609936207,0.8601880877742947,73.545,2405,False,,100,2405,1595,266
+Toutes,HistGradientBoosting,Sans_correction,"{""learning_rate"": 0.1, ""max_leaf_nodes"": 15}",2,0.8229690530441885,0.8217522658610272,74.649,2676,False,,100,2676,1324,256
+Toutes,HistGradientBoosting,Sans_correction,"{""learning_rate"": 0.1, ""max_leaf_nodes"": 15}",3,0.7499869427707236,0.8075855689176689,68.244,2919,False,,100,2919,1081,13
+Toutes,HistGradientBoosting,Sans_correction,"{""learning_rate"": 0.1, ""max_leaf_nodes"": 31}",1,0.8512934476769527,0.8677115987460815,111.361,2405,False,,100,2405,1595,266
+Toutes,HistGradientBoosting,Sans_correction,"{""learning_rate"": 0.1, ""max_leaf_nodes"": 31}",2,0.8235742282884028,0.8225075528700906,113.768,2676,False,,100,2676,1324,256
+Toutes,HistGradientBoosting,Sans_correction,"{""learning_rate"": 0.1, ""max_leaf_nodes"": 31}",3,0.7545924880089714,0.8094357076780758,115.924,2919,False,,100,2919,1081,13
+Toutes,MLP,Correction_train,"{""alpha"": 0.0001}",1,0.8368476824949406,0.8564263322884013,5.496,2670,False,,30,2405,1595,266
+Toutes,MLP,Correction_train,"{""alpha"": 0.0001}",2,0.8109543575103025,0.8089123867069486,5.107,2720,False,,29,2676,1324,256
+Toutes,MLP,Correction_train,"{""alpha"": 0.0001}",3,0.8047240826309929,0.8279370952821462,6.709,3935,False,,27,2919,1081,13
+Toutes,MLP,Correction_train,"{""alpha"": 0.001}",1,0.8353176992122728,0.8551724137931035,4.924,2670,False,,30,2405,1595,266
+Toutes,MLP,Correction_train,"{""alpha"": 0.001}",2,0.8139274727021087,0.8119335347432024,6.604,2720,False,,29,2676,1324,256
+Toutes,MLP,Correction_train,"{""alpha"": 0.001}",3,0.8039790278333416,0.8270120259019427,8.481,3935,False,,27,2919,1081,13
+Toutes,MLP,Correction_train,"{""alpha"": 0.01}",1,0.8349113409910143,0.8545454545454545,5.669,2670,False,,30,2405,1595,266
+Toutes,MLP,Correction_train,"{""alpha"": 0.01}",2,0.8154983273380646,0.8134441087613293,5.951,2720,False,,29,2676,1324,256
+Toutes,MLP,Correction_train,"{""alpha"": 0.01}",3,0.8033154093394235,0.8260869565217391,11.352,3935,False,,27,2919,1081,13

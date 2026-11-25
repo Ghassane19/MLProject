@@ -1,0 +1,93 @@
+{
+  "winner": {
+    "selection": "Toutes",
+    "model": "SVM",
+    "balancing": "Sans_correction",
+    "parameters": {
+      "C": 10
+    }
+  },
+  "family_winners": {
+    "SVM": {
+      "selection": "Toutes",
+      "model": "SVM",
+      "balancing": "Sans_correction",
+      "parameters": {
+        "C": 10
+      }
+    },
+    "HistGradientBoosting": {
+      "selection": "Toutes",
+      "model": "HistGradientBoosting",
+      "balancing": "Sans_correction",
+      "parameters": {
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 31
+      }
+    },
+    "MLP": {
+      "selection": "Toutes",
+      "model": "MLP",
+      "balancing": "Correction_train",
+      "parameters": {
+        "alpha": 0.01
+      }
+    },
+    "RandomForest": {
+      "selection": "Toutes",
+      "model": "RandomForest",
+      "balancing": "Sans_correction",
+      "parameters": {}
+    },
+    "ExtraTrees": {
+      "selection": "ANOVA_50pct",
+      "model": "ExtraTrees",
+      "balancing": "Sans_correction",
+      "parameters": {}
+    },
+    "SGD": {
+      "selection": "Toutes",
+      "model": "SGD",
+      "balancing": "Correction_train",
+      "parameters": {}
+    },
+    "GaussianNB": {
+      "selection": "Importance_RF_50pct",
+      "model": "GaussianNB",
+      "balancing": "Correction_train",
+      "parameters": {}
+    },
+    "LogisticRegression": {
+      "selection": "Toutes",
+      "model": "LogisticRegression",
+      "balancing": "Correction_train",
+      "parameters": {}
+    },
+    "kNN": {
+      "selection": "ANOVA_50pct",
+      "model": "kNN",
+      "balancing": "Correction_train",
+      "parameters": {}
+    },
+    "DecisionTree": {
+      "selection": "ANOVA_50pct",
+      "model": "DecisionTree",
+      "balancing": "Correction_train",
+      "parameters": {}
+    }
+  },
+  "screening_winner": {
+    "selection": "Toutes",
+    "model": "SVM",
+    "balancing": "Sans_correction"
+  },
+  "top_cv_models": [
+    "SVM",
+    "HistGradientBoosting",
+    "MLP"
+  ],
+  "criterion": "cv_mean_f1_macro",
+  "tie_break": "Ordre fixe des configurations en cas d'égalité exacte.",
+  "frozen_before_test_utc": "2026-11-25T21:24:52.422598+00:00",
+  "scope": "Meilleur candidat CV parmi les trois familles présélectionnées sur validation."
+}

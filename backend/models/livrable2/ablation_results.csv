@@ -1,0 +1,4 @@
+descriptor,validation_f1_macro,validation_accuracy,n_features,fit_seconds,fit_samples,convergence_warning,warnings,iterations
+HOG,0.8261274054581909,0.8401084010840109,1764,9.45,3262,False,,2128
+HSV,0.41407813079284306,0.4037940379403794,96,1.028,3262,False,,5140
+HOG_HSV,0.8251149964686348,0.8360433604336044,1860,5.987,3262,False,,2032

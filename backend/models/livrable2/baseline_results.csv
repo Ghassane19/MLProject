@@ -1,0 +1,5 @@
+stage,strategy,accuracy,f1_macro
+validation,most_frequent,0.16124661246612465,0.05554259043173863
+validation,stratified,0.1951219512195122,0.18914201652169765
+test,most_frequent,0.2,0.06666666666666667
+test,stratified,0.216,0.21568337735529655

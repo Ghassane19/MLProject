@@ -1,0 +1,25 @@
+{
+  "input_images": 5000,
+  "retained_images": 5000,
+  "excluded": [],
+  "near_pairs": [
+    {
+      "image_a": "test/pedestrian/kg_train_243451.png",
+      "image_b": "test/pedestrian/kg_val_51808.png",
+      "distance": 4
+    },
+    {
+      "image_a": "train/cyclist/kg_train_298230.png",
+      "image_b": "train/cyclist/kg_train_298885.png",
+      "distance": 4
+    },
+    {
+      "image_a": "train/pedestrian/kg_train_280574.png",
+      "image_b": "train/pedestrian/kg_val_59832.png",
+      "distance": 4
+    }
+  ],
+  "phash_max_distance": 5,
+  "quality_decisions": "Conservation des images sombres et des paires ressemblantes. Les groupes apparentés sont réunis par prudence pour la validation, sans affirmer qu'il s'agit de doublons ni modifier les originaux.",
+  "label_review": "Revue visuelle partielle héritée du notebook de nettoyage."
+}

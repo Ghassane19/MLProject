@@ -1,0 +1,7170 @@
+{
+  "protocol_version": "expanded-v2",
+  "run_status": "complete",
+  "timestamp_utc": "2026-11-25T21:30:09.664696+00:00",
+  "seed": 42,
+  "versions": {
+    "numpy": "2.4.2",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.9.1",
+    "scikit-image": "0.26.0",
+    "Pillow": "12.2.0",
+    "matplotlib": "3.10.8",
+    "joblib": "1.6.0"
+  },
+  "feature_config": {
+    "size": [
+      128,
+      128
+    ],
+    "padding_rgb": [
+      114,
+      114,
+      114
+    ],
+    "hog_orientations": 9,
+    "hog_pixels_per_cell": [
+      16,
+      16
+    ],
+    "hog_cells_per_block": [
+      2,
+      2
+    ],
+    "hog_block_norm": "L2-Hys",
+    "hsv_bins_per_channel": 32
+  },
+  "n_features": 1860,
+  "selection": {
+    "winner": {
+      "selection": "Toutes",
+      "model": "SVM",
+      "balancing": "Sans_correction",
+      "parameters": {
+        "C": 10
+      }
+    },
+    "family_winners": {
+      "SVM": {
+        "selection": "Toutes",
+        "model": "SVM",
+        "balancing": "Sans_correction",
+        "parameters": {
+          "C": 10
+        }
+      },
+      "HistGradientBoosting": {
+        "selection": "Toutes",
+        "model": "HistGradientBoosting",
+        "balancing": "Sans_correction",
+        "parameters": {
+          "learning_rate": 0.1,
+          "max_leaf_nodes": 31
+        }
+      },
+      "MLP": {
+        "selection": "Toutes",
+        "model": "MLP",
+        "balancing": "Correction_train",
+        "parameters": {
+          "alpha": 0.01
+        }
+      },
+      "RandomForest": {
+        "selection": "Toutes",
+        "model": "RandomForest",
+        "balancing": "Sans_correction",
+        "parameters": {}
+      },
+      "ExtraTrees": {
+        "selection": "ANOVA_50pct",
+        "model": "ExtraTrees",
+        "balancing": "Sans_correction",
+        "parameters": {}
+      },
+      "SGD": {
+        "selection": "Toutes",
+        "model": "SGD",
+        "balancing": "Correction_train",
+        "parameters": {}
+      },
+      "GaussianNB": {
+        "selection": "Importance_RF_50pct",
+        "model": "GaussianNB",
+        "balancing": "Correction_train",
+        "parameters": {}
+      },
+      "LogisticRegression": {
+        "selection": "Toutes",
+        "model": "LogisticRegression",
+        "balancing": "Correction_train",
+        "parameters": {}
+      },
+      "kNN": {
+        "selection": "ANOVA_50pct",
+        "model": "kNN",
+        "balancing": "Correction_train",
+        "parameters": {}
+      },
+      "DecisionTree": {
+        "selection": "ANOVA_50pct",
+        "model": "DecisionTree",
+        "balancing": "Correction_train",
+        "parameters": {}
+      }
+    },
+    "screening_winner": {
+      "selection": "Toutes",
+      "model": "SVM",
+      "balancing": "Sans_correction"
+    },
+    "top_cv_models": [
+      "SVM",
+      "HistGradientBoosting",
+      "MLP"
+    ],
+    "criterion": "cv_mean_f1_macro",
+    "tie_break": "Ordre fixe des configurations en cas d'égalité exacte.",
+    "frozen_before_test_utc": "2026-11-25T21:24:52.422598+00:00",
+    "scope": "Meilleur candidat CV parmi les trois familles présélectionnées sur validation."
+  },
+  "dummy_validation": {
+    "accuracy": 0.16124661246612465,
+    "precision_weighted": 0.02600047003180059,
+    "recall_weighted": 0.16124661246612465,
+    "f1_weighted": 0.0447802727735562,
+    "f1_macro": 0.05554259043173863,
+    "per_class": {
+      "bus": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 120.0
+      },
+      "car": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 120.0
+      },
+      "cyclist": {
+        "precision": 0.16124661246612465,
+        "recall": 1.0,
+        "f1-score": 0.2777129521586931,
+        "support": 119.0
+      },
+      "motorcycle": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 123.0
+      },
+      "pedestrian": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 256.0
+      },
+      "accuracy": 0.16124661246612465,
+      "macro avg": {
+        "precision": 0.03224932249322493,
+        "recall": 0.2,
+        "f1-score": 0.05554259043173863,
+        "support": 738.0
+      },
+      "weighted avg": {
+        "precision": 0.02600047003180059,
+        "recall": 0.16124661246612465,
+        "f1-score": 0.0447802727735562,
+        "support": 738.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        0,
+        0,
+        120,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        120,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        119,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        123,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        256,
+        0,
+        0
+      ]
+    ],
+    "most_confused_pairs": [
+      {
+        "classes": [
+          "cyclist",
+          "pedestrian"
+        ],
+        "errors": 256,
+        "a_to_b": 0,
+        "b_to_a": 256
+      },
+      {
+        "classes": [
+          "cyclist",
+          "motorcycle"
+        ],
+        "errors": 123,
+        "a_to_b": 0,
+        "b_to_a": 123
+      },
+      {
+        "classes": [
+          "bus",
+          "cyclist"
+        ],
+        "errors": 120,
+        "a_to_b": 120,
+        "b_to_a": 0
+      },
+      {
+        "classes": [
+          "car",
+          "cyclist"
+        ],
+        "errors": 120,
+        "a_to_b": 120,
+        "b_to_a": 0
+      }
+    ]
+  },
+  "split_summary": {
+    "seed": 42,
+    "target_validation_fraction_of_development": 0.15,
+    "method": "1024 partitions de groupes à graine fixe ; choix par effectifs uniquement. Support validation minimal = moitié de la cible 15 % par classe ; train >= 50 % par classe.",
+    "counts": [
+      {
+        "split": "test",
+        "class": "bus",
+        "count": 200
+      },
+      {
+        "split": "test",
+        "class": "car",
+        "count": 200
+      },
+      {
+        "split": "test",
+        "class": "cyclist",
+        "count": 200
+      },
+      {
+        "split": "test",
+        "class": "motorcycle",
+        "count": 200
+      },
+      {
+        "split": "test",
+        "class": "pedestrian",
+        "count": 200
+      },
+      {
+        "split": "train",
+        "class": "bus",
+        "count": 680
+      },
+      {
+        "split": "train",
+        "class": "car",
+        "count": 680
+      },
+      {
+        "split": "train",
+        "class": "cyclist",
+        "count": 681
+      },
+      {
+        "split": "train",
+        "class": "motorcycle",
+        "count": 677
+      },
+      {
+        "split": "train",
+        "class": "pedestrian",
+        "count": 544
+      },
+      {
+        "split": "validation",
+        "class": "bus",
+        "count": 120
+      },
+      {
+        "split": "validation",
+        "class": "car",
+        "count": 120
+      },
+      {
+        "split": "validation",
+        "class": "cyclist",
+        "count": 119
+      },
+      {
+        "split": "validation",
+        "class": "motorcycle",
+        "count": 123
+      },
+      {
+        "split": "validation",
+        "class": "pedestrian",
+        "count": 256
+      }
+    ],
+    "group_overlap": 0,
+    "groups_per_split": {
+      "test": 586,
+      "train": 2580,
+      "validation": 456
+    },
+    "actual_validation_fraction": 0.1845
+  },
+  "test": {
+    "SVM": {
+      "accuracy": 0.819,
+      "precision_weighted": 0.8273572916978428,
+      "recall_weighted": 0.819,
+      "f1_weighted": 0.8177661435318312,
+      "f1_macro": 0.8177661435318312,
+      "per_class": {
+        "bus": {
+          "precision": 0.9054054054054054,
+          "recall": 0.67,
+          "f1-score": 0.7701149425287356,
+          "support": 200.0
+        },
+        "car": {
+          "precision": 0.710204081632653,
+          "recall": 0.87,
+          "f1-score": 0.7820224719101123,
+          "support": 200.0
+        },
+        "cyclist": {
+          "precision": 0.8109452736318408,
+          "recall": 0.815,
+          "f1-score": 0.8129675810473815,
+          "support": 200.0
+        },
+        "motorcycle": {
+          "precision": 0.8177083333333334,
+          "recall": 0.785,
+          "f1-score": 0.8010204081632653,
+          "support": 200.0
+        },
+        "pedestrian": {
+          "precision": 0.8925233644859814,
+          "recall": 0.955,
+          "f1-score": 0.9227053140096618,
+          "support": 200.0
+        },
+        "accuracy": 0.819,
+        "macro avg": {
+          "precision": 0.8273572916978427,
+          "recall": 0.819,
+          "f1-score": 0.8177661435318312,
+          "support": 1000.0
+        },
+        "weighted avg": {
+          "precision": 0.8273572916978428,
+          "recall": 0.819,
+          "f1-score": 0.8177661435318312,
+          "support": 1000.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          134,
+          51,
+          4,
+          4,
+          7
+        ],
+        [
+          13,
+          174,
+          4,
+          7,
+          2
+        ],
+        [
+          1,
+          5,
+          163,
+          21,
+          10
+        ],
+        [
+          0,
+          11,
+          28,
+          157,
+          4
+        ],
+        [
+          0,
+          4,
+          2,
+          3,
+          191
+        ]
+      ],
+      "most_confused_pairs": [
+        {
+          "classes": [
+            "bus",
+            "car"
+          ],
+          "errors": 64,
+          "a_to_b": 51,
+          "b_to_a": 13
+        },
+        {
+          "classes": [
+            "cyclist",
+            "motorcycle"
+          ],
+          "errors": 49,
+          "a_to_b": 21,
+          "b_to_a": 28
+        },
+        {
+          "classes": [
+            "car",
+            "motorcycle"
+          ],
+          "errors": 18,
+          "a_to_b": 7,
+          "b_to_a": 11
+        },
+        {
+          "classes": [
+            "cyclist",
+            "pedestrian"
+          ],
+          "errors": 12,
+          "a_to_b": 10,
+          "b_to_a": 2
+        },
+        {
+          "classes": [
+            "car",
+            "cyclist"
+          ],
+          "errors": 9,
+          "a_to_b": 4,
+          "b_to_a": 5
+        }
+      ],
+      "configuration": {
+        "selection": "Toutes",
+        "model": "SVM",
+        "balancing": "Sans_correction",
+        "parameters": {
+          "C": 10
+        }
+      },
+      "fit_diagnostics": {
+        "fit_seconds": 10.04,
+        "fit_samples": 4000,
+        "convergence_warning": false,
+        "warnings": "",
+        "iterations": 2410
+      },
+      "balanced_accuracy": 0.819,
+      "mcc": 0.7761744807504588,
+      "by_source": {
+        "coco": {
+          "accuracy": 0.7960526315789473,
+          "precision_weighted": 0.8328635592218289,
+          "recall_weighted": 0.7960526315789473,
+          "f1_weighted": 0.8104993519606296,
+          "f1_macro": 0.6119359062030592,
+          "per_class": {
+            "bus": {
+              "precision": 0.6857142857142857,
+              "recall": 0.8,
+              "f1-score": 0.7384615384615385,
+              "support": 30.0
+            },
+            "car": {
+              "precision": 0.9217391304347826,
+              "recall": 0.848,
+              "f1-score": 0.8833333333333333,
+              "support": 125.0
+            },
+            "cyclist": {
+              "precision": 0.86,
+              "recall": 0.7543859649122807,
+              "f1-score": 0.8037383177570093,
+              "support": 114.0
+            },
+            "motorcycle": {
+              "precision": 0.5531914893617021,
+              "recall": 0.7428571428571429,
+              "f1-score": 0.6341463414634146,
+              "support": 35.0
+            },
+            "pedestrian": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "accuracy": 0.7960526315789473,
+            "macro avg": {
+              "precision": 0.6041289811021542,
+              "recall": 0.6290486215538847,
+              "f1-score": 0.6119359062030592,
+              "support": 304.0
+            },
+            "weighted avg": {
+              "precision": 0.8328635592218289,
+              "recall": 0.7960526315789473,
+              "f1-score": 0.8104993519606296,
+              "support": 304.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              24,
+              4,
+              1,
+              1,
+              0
+            ],
+            [
+              11,
+              106,
+              4,
+              3,
+              1
+            ],
+            [
+              0,
+              5,
+              86,
+              17,
+              6
+            ],
+            [
+              0,
+              0,
+              9,
+              26,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 26,
+              "a_to_b": 17,
+              "b_to_a": 9
+            },
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 15,
+              "a_to_b": 4,
+              "b_to_a": 11
+            },
+            {
+              "classes": [
+                "car",
+                "cyclist"
+              ],
+              "errors": 9,
+              "a_to_b": 4,
+              "b_to_a": 5
+            },
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 6,
+              "a_to_b": 6,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 3,
+              "a_to_b": 3,
+              "b_to_a": 0
+            }
+          ]
+        },
+        "kaggle": {
+          "accuracy": 0.8715083798882681,
+          "precision_weighted": 0.9102716569188005,
+          "recall_weighted": 0.8715083798882681,
+          "f1_weighted": 0.8863006292076426,
+          "f1_macro": 0.7031898945848953,
+          "per_class": {
+            "bus": {
+              "precision": 0.99,
+              "recall": 0.908256880733945,
+              "f1-score": 0.9473684210526315,
+              "support": 109.0
+            },
+            "car": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "cyclist": {
+              "precision": 0.8279569892473119,
+              "recall": 0.9058823529411765,
+              "f1-score": 0.8651685393258427,
+              "support": 85.0
+            },
+            "motorcycle": {
+              "precision": 0.9659090909090909,
+              "recall": 0.7870370370370371,
+              "f1-score": 0.8673469387755102,
+              "support": 108.0
+            },
+            "pedestrian": {
+              "precision": 0.7727272727272727,
+              "recall": 0.9107142857142857,
+              "f1-score": 0.8360655737704918,
+              "support": 56.0
+            },
+            "accuracy": 0.8715083798882681,
+            "macro avg": {
+              "precision": 0.7113186705767351,
+              "recall": 0.7023781112852888,
+              "f1-score": 0.7031898945848953,
+              "support": 358.0
+            },
+            "weighted avg": {
+              "precision": 0.9102716569188005,
+              "recall": 0.8715083798882681,
+              "f1-score": 0.8863006292076426,
+              "support": 358.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              99,
+              2,
+              1,
+              0,
+              7
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              77,
+              3,
+              4
+            ],
+            [
+              0,
+              5,
+              14,
+              85,
+              4
+            ],
+            [
+              0,
+              4,
+              1,
+              0,
+              51
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 17,
+              "a_to_b": 3,
+              "b_to_a": 14
+            },
+            {
+              "classes": [
+                "bus",
+                "pedestrian"
+              ],
+              "errors": 7,
+              "a_to_b": 7,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 5,
+              "a_to_b": 0,
+              "b_to_a": 5
+            },
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 5,
+              "a_to_b": 4,
+              "b_to_a": 1
+            },
+            {
+              "classes": [
+                "car",
+                "pedestrian"
+              ],
+              "errors": 4,
+              "a_to_b": 0,
+              "b_to_a": 4
+            }
+          ]
+        },
+        "original": {
+          "accuracy": 0.6443298969072165,
+          "precision_weighted": 0.7372581599385722,
+          "recall_weighted": 0.6443298969072165,
+          "f1_weighted": 0.6080190616804497,
+          "f1_macro": 0.3654314107922355,
+          "per_class": {
+            "bus": {
+              "precision": 0.8461538461538461,
+              "recall": 0.18032786885245902,
+              "f1-score": 0.2972972972972973,
+              "support": 61.0
+            },
+            "car": {
+              "precision": 0.5714285714285714,
+              "recall": 0.9066666666666666,
+              "f1-score": 0.7010309278350515,
+              "support": 75.0
+            },
+            "cyclist": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 1.0
+            },
+            "motorcycle": {
+              "precision": 0.8518518518518519,
+              "recall": 0.8070175438596491,
+              "f1-score": 0.8288288288288288,
+              "support": 57.0
+            },
+            "pedestrian": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "accuracy": 0.6443298969072165,
+            "macro avg": {
+              "precision": 0.4538868538868538,
+              "recall": 0.3788024158757549,
+              "f1-score": 0.3654314107922355,
+              "support": 194.0
+            },
+            "weighted avg": {
+              "precision": 0.7372581599385722,
+              "recall": 0.6443298969072165,
+              "f1-score": 0.6080190616804497,
+              "support": 194.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              11,
+              45,
+              2,
+              3,
+              0
+            ],
+            [
+              2,
+              68,
+              0,
+              4,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              6,
+              5,
+              46,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 47,
+              "a_to_b": 45,
+              "b_to_a": 2
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 10,
+              "a_to_b": 4,
+              "b_to_a": 6
+            },
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 6,
+              "a_to_b": 1,
+              "b_to_a": 5
+            },
+            {
+              "classes": [
+                "bus",
+                "motorcycle"
+              ],
+              "errors": 3,
+              "a_to_b": 3,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "bus",
+                "cyclist"
+              ],
+              "errors": 2,
+              "a_to_b": 2,
+              "b_to_a": 0
+            }
+          ]
+        },
+        "penn_fudan": {
+          "accuracy": 0.9722222222222222,
+          "precision_weighted": 1.0,
+          "recall_weighted": 0.9722222222222222,
+          "f1_weighted": 0.9859154929577465,
+          "f1_macro": 0.1971830985915493,
+          "per_class": {
+            "bus": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "car": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "cyclist": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "motorcycle": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "pedestrian": {
+              "precision": 1.0,
+              "recall": 0.9722222222222222,
+              "f1-score": 0.9859154929577465,
+              "support": 144.0
+            },
+            "accuracy": 0.9722222222222222,
+            "macro avg": {
+              "precision": 0.2,
+              "recall": 0.19444444444444445,
+              "f1-score": 0.1971830985915493,
+              "support": 144.0
+            },
+            "weighted avg": {
+              "precision": 1.0,
+              "recall": 0.9722222222222222,
+              "f1-score": 0.9859154929577465,
+              "support": 144.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1,
+              3,
+              140
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "motorcycle",
+                "pedestrian"
+              ],
+              "errors": 3,
+              "a_to_b": 0,
+              "b_to_a": 3
+            },
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 1,
+              "a_to_b": 0,
+              "b_to_a": 1
+            }
+          ]
+        }
+      }
+    },
+    "SGD": {
+      "accuracy": 0.757,
+      "precision_weighted": 0.7670875026331313,
+      "recall_weighted": 0.757,
+      "f1_weighted": 0.7535463495294817,
+      "f1_macro": 0.7535463495294816,
+      "per_class": {
+        "bus": {
+          "precision": 0.875,
+          "recall": 0.595,
+          "f1-score": 0.7083333333333334,
+          "support": 200.0
+        },
+        "car": {
+          "precision": 0.6533864541832669,
+          "recall": 0.82,
+          "f1-score": 0.7272727272727273,
+          "support": 200.0
+        },
+        "cyclist": {
+          "precision": 0.7435897435897436,
+          "recall": 0.725,
+          "f1-score": 0.7341772151898734,
+          "support": 200.0
+        },
+        "motorcycle": {
+          "precision": 0.7351351351351352,
+          "recall": 0.68,
+          "f1-score": 0.7064935064935065,
+          "support": 200.0
+        },
+        "pedestrian": {
+          "precision": 0.8283261802575107,
+          "recall": 0.965,
+          "f1-score": 0.8914549653579676,
+          "support": 200.0
+        },
+        "accuracy": 0.757,
+        "macro avg": {
+          "precision": 0.7670875026331313,
+          "recall": 0.757,
+          "f1-score": 0.7535463495294816,
+          "support": 1000.0
+        },
+        "weighted avg": {
+          "precision": 0.7670875026331313,
+          "recall": 0.757,
+          "f1-score": 0.7535463495294817,
+          "support": 1000.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          119,
+          52,
+          6,
+          6,
+          17
+        ],
+        [
+          13,
+          164,
+          6,
+          13,
+          4
+        ],
+        [
+          3,
+          11,
+          145,
+          27,
+          14
+        ],
+        [
+          1,
+          23,
+          35,
+          136,
+          5
+        ],
+        [
+          0,
+          1,
+          3,
+          3,
+          193
+        ]
+      ],
+      "most_confused_pairs": [
+        {
+          "classes": [
+            "bus",
+            "car"
+          ],
+          "errors": 65,
+          "a_to_b": 52,
+          "b_to_a": 13
+        },
+        {
+          "classes": [
+            "cyclist",
+            "motorcycle"
+          ],
+          "errors": 62,
+          "a_to_b": 27,
+          "b_to_a": 35
+        },
+        {
+          "classes": [
+            "car",
+            "motorcycle"
+          ],
+          "errors": 36,
+          "a_to_b": 13,
+          "b_to_a": 23
+        },
+        {
+          "classes": [
+            "bus",
+            "pedestrian"
+          ],
+          "errors": 17,
+          "a_to_b": 17,
+          "b_to_a": 0
+        },
+        {
+          "classes": [
+            "car",
+            "cyclist"
+          ],
+          "errors": 17,
+          "a_to_b": 6,
+          "b_to_a": 11
+        }
+      ],
+      "configuration": {
+        "selection": "Toutes",
+        "model": "SGD",
+        "balancing": "Correction_train",
+        "parameters": {}
+      },
+      "fit_diagnostics": {
+        "fit_seconds": 40.793,
+        "fit_samples": 4000,
+        "convergence_warning": false,
+        "warnings": "",
+        "iterations": 1319
+      },
+      "balanced_accuracy": 0.757,
+      "mcc": 0.6997734829977525,
+      "by_source": {
+        "coco": {
+          "accuracy": 0.7203947368421053,
+          "precision_weighted": 0.79023544048036,
+          "recall_weighted": 0.7203947368421053,
+          "f1_weighted": 0.7424373541813453,
+          "f1_macro": 0.5644624986924232,
+          "per_class": {
+            "bus": {
+              "precision": 0.6578947368421053,
+              "recall": 0.8333333333333334,
+              "f1-score": 0.7352941176470589,
+              "support": 30.0
+            },
+            "car": {
+              "precision": 0.8620689655172413,
+              "recall": 0.8,
+              "f1-score": 0.8298755186721992,
+              "support": 125.0
+            },
+            "cyclist": {
+              "precision": 0.8518518518518519,
+              "recall": 0.6052631578947368,
+              "f1-score": 0.7076923076923077,
+              "support": 114.0
+            },
+            "motorcycle": {
+              "precision": 0.44642857142857145,
+              "recall": 0.7142857142857143,
+              "f1-score": 0.5494505494505495,
+              "support": 35.0
+            },
+            "pedestrian": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "accuracy": 0.7203947368421053,
+            "macro avg": {
+              "precision": 0.563648825127954,
+              "recall": 0.5905764411027569,
+              "f1-score": 0.5644624986924232,
+              "support": 304.0
+            },
+            "weighted avg": {
+              "precision": 0.79023544048036,
+              "recall": 0.7203947368421053,
+              "f1-score": 0.7424373541813453,
+              "support": 304.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              25,
+              3,
+              1,
+              1,
+              0
+            ],
+            [
+              11,
+              100,
+              4,
+              7,
+              3
+            ],
+            [
+              2,
+              10,
+              69,
+              23,
+              10
+            ],
+            [
+              0,
+              3,
+              7,
+              25,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 30,
+              "a_to_b": 23,
+              "b_to_a": 7
+            },
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 14,
+              "a_to_b": 3,
+              "b_to_a": 11
+            },
+            {
+              "classes": [
+                "car",
+                "cyclist"
+              ],
+              "errors": 14,
+              "a_to_b": 4,
+              "b_to_a": 10
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 10,
+              "a_to_b": 7,
+              "b_to_a": 3
+            },
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 10,
+              "a_to_b": 10,
+              "b_to_a": 0
+            }
+          ]
+        },
+        "kaggle": {
+          "accuracy": 0.8100558659217877,
+          "precision_weighted": 0.8771514296508697,
+          "recall_weighted": 0.8100558659217877,
+          "f1_weighted": 0.8278224786351162,
+          "f1_macro": 0.6598756455084026,
+          "per_class": {
+            "bus": {
+              "precision": 0.9886363636363636,
+              "recall": 0.7981651376146789,
+              "f1-score": 0.883248730964467,
+              "support": 109.0
+            },
+            "car": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "cyclist": {
+              "precision": 0.7755102040816326,
+              "recall": 0.8941176470588236,
+              "f1-score": 0.8306010928961749,
+              "support": 85.0
+            },
+            "motorcycle": {
+              "precision": 0.9473684210526315,
+              "recall": 0.6666666666666666,
+              "f1-score": 0.782608695652174,
+              "support": 108.0
+            },
+            "pedestrian": {
+              "precision": 0.6790123456790124,
+              "recall": 0.9821428571428571,
+              "f1-score": 0.8029197080291971,
+              "support": 56.0
+            },
+            "accuracy": 0.8100558659217877,
+            "macro avg": {
+              "precision": 0.678105466889928,
+              "recall": 0.6682184616966053,
+              "f1-score": 0.6598756455084026,
+              "support": 358.0
+            },
+            "weighted avg": {
+              "precision": 0.8771514296508697,
+              "recall": 0.8100558659217877,
+              "f1-score": 0.8278224786351162,
+              "support": 358.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              87,
+              2,
+              2,
+              1,
+              17
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              76,
+              3,
+              4
+            ],
+            [
+              0,
+              11,
+              20,
+              72,
+              5
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              55
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 23,
+              "a_to_b": 3,
+              "b_to_a": 20
+            },
+            {
+              "classes": [
+                "bus",
+                "pedestrian"
+              ],
+              "errors": 17,
+              "a_to_b": 17,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 11,
+              "a_to_b": 0,
+              "b_to_a": 11
+            },
+            {
+              "classes": [
+                "motorcycle",
+                "pedestrian"
+              ],
+              "errors": 5,
+              "a_to_b": 5,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 4,
+              "a_to_b": 4,
+              "b_to_a": 0
+            }
+          ]
+        },
+        "original": {
+          "accuracy": 0.5670103092783505,
+          "precision_weighted": 0.6554639175257732,
+          "recall_weighted": 0.5670103092783505,
+          "f1_weighted": 0.5299502067732609,
+          "f1_macro": 0.3165130635237256,
+          "per_class": {
+            "bus": {
+              "precision": 0.7,
+              "recall": 0.11475409836065574,
+              "f1-score": 0.19718309859154928,
+              "support": 61.0
+            },
+            "car": {
+              "precision": 0.5333333333333333,
+              "recall": 0.8533333333333334,
+              "f1-score": 0.6564102564102564,
+              "support": 75.0
+            },
+            "cyclist": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 1.0
+            },
+            "motorcycle": {
+              "precision": 0.78,
+              "recall": 0.6842105263157895,
+              "f1-score": 0.7289719626168224,
+              "support": 57.0
+            },
+            "pedestrian": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "accuracy": 0.5670103092783505,
+            "macro avg": {
+              "precision": 0.40266666666666673,
+              "recall": 0.3304595916019557,
+              "f1-score": 0.3165130635237256,
+              "support": 194.0
+            },
+            "weighted avg": {
+              "precision": 0.6554639175257732,
+              "recall": 0.5670103092783505,
+              "f1-score": 0.5299502067732609,
+              "support": 194.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              7,
+              47,
+              3,
+              4,
+              0
+            ],
+            [
+              2,
+              64,
+              2,
+              6,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              9,
+              8,
+              39,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 49,
+              "a_to_b": 47,
+              "b_to_a": 2
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 15,
+              "a_to_b": 6,
+              "b_to_a": 9
+            },
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 9,
+              "a_to_b": 1,
+              "b_to_a": 8
+            },
+            {
+              "classes": [
+                "bus",
+                "motorcycle"
+              ],
+              "errors": 5,
+              "a_to_b": 4,
+              "b_to_a": 1
+            },
+            {
+              "classes": [
+                "bus",
+                "cyclist"
+              ],
+              "errors": 3,
+              "a_to_b": 3,
+              "b_to_a": 0
+            }
+          ]
+        },
+        "penn_fudan": {
+          "accuracy": 0.9583333333333334,
+          "precision_weighted": 1.0,
+          "recall_weighted": 0.9583333333333334,
+          "f1_weighted": 0.978723404255319,
+          "f1_macro": 0.19574468085106383,
+          "per_class": {
+            "bus": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "car": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "cyclist": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "motorcycle": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "pedestrian": {
+              "precision": 1.0,
+              "recall": 0.9583333333333334,
+              "f1-score": 0.9787234042553191,
+              "support": 144.0
+            },
+            "accuracy": 0.9583333333333334,
+            "macro avg": {
+              "precision": 0.2,
+              "recall": 0.19166666666666668,
+              "f1-score": 0.19574468085106383,
+              "support": 144.0
+            },
+            "weighted avg": {
+              "precision": 1.0,
+              "recall": 0.9583333333333334,
+              "f1-score": 0.978723404255319,
+              "support": 144.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              3,
+              3,
+              138
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 3,
+              "a_to_b": 0,
+              "b_to_a": 3
+            },
+            {
+              "classes": [
+                "motorcycle",
+                "pedestrian"
+              ],
+              "errors": 3,
+              "a_to_b": 0,
+              "b_to_a": 3
+            }
+          ]
+        }
+      }
+    },
+    "LogisticRegression": {
+      "accuracy": 0.769,
+      "precision_weighted": 0.7754838919099013,
+      "recall_weighted": 0.769,
+      "f1_weighted": 0.7678942160388673,
+      "f1_macro": 0.7678942160388671,
+      "per_class": {
+        "bus": {
+          "precision": 0.8366013071895425,
+          "recall": 0.64,
+          "f1-score": 0.7252124645892352,
+          "support": 200.0
+        },
+        "car": {
+          "precision": 0.673469387755102,
+          "recall": 0.825,
+          "f1-score": 0.7415730337078652,
+          "support": 200.0
+        },
+        "cyclist": {
+          "precision": 0.7355769230769231,
+          "recall": 0.765,
+          "f1-score": 0.75,
+          "support": 200.0
+        },
+        "motorcycle": {
+          "precision": 0.7195767195767195,
+          "recall": 0.68,
+          "f1-score": 0.699228791773779,
+          "support": 200.0
+        },
+        "pedestrian": {
+          "precision": 0.9121951219512195,
+          "recall": 0.935,
+          "f1-score": 0.9234567901234568,
+          "support": 200.0
+        },
+        "accuracy": 0.769,
+        "macro avg": {
+          "precision": 0.7754838919099013,
+          "recall": 0.769,
+          "f1-score": 0.7678942160388671,
+          "support": 1000.0
+        },
+        "weighted avg": {
+          "precision": 0.7754838919099013,
+          "recall": 0.769,
+          "f1-score": 0.7678942160388673,
+          "support": 1000.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          128,
+          52,
+          5,
+          9,
+          6
+        ],
+        [
+          16,
+          165,
+          7,
+          10,
+          2
+        ],
+        [
+          4,
+          8,
+          153,
+          30,
+          5
+        ],
+        [
+          4,
+          17,
+          38,
+          136,
+          5
+        ],
+        [
+          1,
+          3,
+          5,
+          4,
+          187
+        ]
+      ],
+      "most_confused_pairs": [
+        {
+          "classes": [
+            "bus",
+            "car"
+          ],
+          "errors": 68,
+          "a_to_b": 52,
+          "b_to_a": 16
+        },
+        {
+          "classes": [
+            "cyclist",
+            "motorcycle"
+          ],
+          "errors": 68,
+          "a_to_b": 30,
+          "b_to_a": 38
+        },
+        {
+          "classes": [
+            "car",
+            "motorcycle"
+          ],
+          "errors": 27,
+          "a_to_b": 10,
+          "b_to_a": 17
+        },
+        {
+          "classes": [
+            "car",
+            "cyclist"
+          ],
+          "errors": 15,
+          "a_to_b": 7,
+          "b_to_a": 8
+        },
+        {
+          "classes": [
+            "bus",
+            "motorcycle"
+          ],
+          "errors": 13,
+          "a_to_b": 9,
+          "b_to_a": 4
+        }
+      ],
+      "configuration": {
+        "selection": "Toutes",
+        "model": "LogisticRegression",
+        "balancing": "Correction_train",
+        "parameters": {}
+      },
+      "fit_diagnostics": {
+        "fit_seconds": 2.831,
+        "fit_samples": 4000,
+        "convergence_warning": false,
+        "warnings": "",
+        "iterations": 104
+      },
+      "balanced_accuracy": 0.769,
+      "mcc": 0.7132337655749332,
+      "by_source": {
+        "coco": {
+          "accuracy": 0.7401315789473685,
+          "precision_weighted": 0.7798712032554056,
+          "recall_weighted": 0.7401315789473685,
+          "f1_weighted": 0.7527392995141753,
+          "f1_macro": 0.5583307904965331,
+          "per_class": {
+            "bus": {
+              "precision": 0.5952380952380952,
+              "recall": 0.8333333333333334,
+              "f1-score": 0.6944444444444444,
+              "support": 30.0
+            },
+            "car": {
+              "precision": 0.8938053097345132,
+              "recall": 0.808,
+              "f1-score": 0.8487394957983193,
+              "support": 125.0
+            },
+            "cyclist": {
+              "precision": 0.8105263157894737,
+              "recall": 0.6754385964912281,
+              "f1-score": 0.7368421052631579,
+              "support": 114.0
+            },
+            "motorcycle": {
+              "precision": 0.43137254901960786,
+              "recall": 0.6285714285714286,
+              "f1-score": 0.5116279069767442,
+              "support": 35.0
+            },
+            "pedestrian": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "accuracy": 0.7401315789473685,
+            "macro avg": {
+              "precision": 0.546188453956338,
+              "recall": 0.589068671679198,
+              "f1-score": 0.5583307904965331,
+              "support": 304.0
+            },
+            "weighted avg": {
+              "precision": 0.7798712032554056,
+              "recall": 0.7401315789473685,
+              "f1-score": 0.7527392995141753,
+              "support": 304.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              25,
+              4,
+              0,
+              1,
+              0
+            ],
+            [
+              13,
+              101,
+              6,
+              4,
+              1
+            ],
+            [
+              4,
+              7,
+              77,
+              24,
+              2
+            ],
+            [
+              0,
+              1,
+              12,
+              22,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 36,
+              "a_to_b": 24,
+              "b_to_a": 12
+            },
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 17,
+              "a_to_b": 4,
+              "b_to_a": 13
+            },
+            {
+              "classes": [
+                "car",
+                "cyclist"
+              ],
+              "errors": 13,
+              "a_to_b": 6,
+              "b_to_a": 7
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 5,
+              "a_to_b": 4,
+              "b_to_a": 1
+            },
+            {
+              "classes": [
+                "bus",
+                "cyclist"
+              ],
+              "errors": 4,
+              "a_to_b": 0,
+              "b_to_a": 4
+            }
+          ]
+        },
+        "kaggle": {
+          "accuracy": 0.8240223463687151,
+          "precision_weighted": 0.8810872799281854,
+          "recall_weighted": 0.8240223463687151,
+          "f1_weighted": 0.8451211676037169,
+          "f1_macro": 0.6751583517438104,
+          "per_class": {
+            "bus": {
+              "precision": 0.9787234042553191,
+              "recall": 0.8440366972477065,
+              "f1-score": 0.9064039408866995,
+              "support": 109.0
+            },
+            "car": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "cyclist": {
+              "precision": 0.7755102040816326,
+              "recall": 0.8941176470588236,
+              "f1-score": 0.8306010928961749,
+              "support": 85.0
+            },
+            "motorcycle": {
+              "precision": 0.9156626506024096,
+              "recall": 0.7037037037037037,
+              "f1-score": 0.7958115183246073,
+              "support": 108.0
+            },
+            "pedestrian": {
+              "precision": 0.7846153846153846,
+              "recall": 0.9107142857142857,
+              "f1-score": 0.8429752066115702,
+              "support": 56.0
+            },
+            "accuracy": 0.8240223463687151,
+            "macro avg": {
+              "precision": 0.6909023287109491,
+              "recall": 0.6705144667449039,
+              "f1-score": 0.6751583517438104,
+              "support": 358.0
+            },
+            "weighted avg": {
+              "precision": 0.8810872799281854,
+              "recall": 0.8240223463687151,
+              "f1-score": 0.8451211676037169,
+              "support": 358.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              92,
+              7,
+              3,
+              1,
+              6
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              76,
+              5,
+              3
+            ],
+            [
+              1,
+              8,
+              18,
+              76,
+              5
+            ],
+            [
+              1,
+              2,
+              1,
+              1,
+              51
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 23,
+              "a_to_b": 5,
+              "b_to_a": 18
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 8,
+              "a_to_b": 0,
+              "b_to_a": 8
+            },
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 7,
+              "a_to_b": 7,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "bus",
+                "pedestrian"
+              ],
+              "errors": 7,
+              "a_to_b": 6,
+              "b_to_a": 1
+            },
+            {
+              "classes": [
+                "motorcycle",
+                "pedestrian"
+              ],
+              "errors": 6,
+              "a_to_b": 5,
+              "b_to_a": 1
+            }
+          ]
+        },
+        "original": {
+          "accuracy": 0.5824742268041238,
+          "precision_weighted": 0.6371253118316235,
+          "recall_weighted": 0.5824742268041238,
+          "f1_weighted": 0.5567632848372025,
+          "f1_macro": 0.33203001046061753,
+          "per_class": {
+            "bus": {
+              "precision": 0.6470588235294118,
+              "recall": 0.18032786885245902,
+              "f1-score": 0.28205128205128205,
+              "support": 61.0
+            },
+            "car": {
+              "precision": 0.5663716814159292,
+              "recall": 0.8533333333333334,
+              "f1-score": 0.6808510638297872,
+              "support": 75.0
+            },
+            "cyclist": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 1.0
+            },
+            "motorcycle": {
+              "precision": 0.7307692307692307,
+              "recall": 0.6666666666666666,
+              "f1-score": 0.6972477064220184,
+              "support": 57.0
+            },
+            "pedestrian": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "accuracy": 0.5824742268041238,
+            "macro avg": {
+              "precision": 0.38883994714291437,
+              "recall": 0.3400655737704918,
+              "f1-score": 0.33203001046061753,
+              "support": 194.0
+            },
+            "weighted avg": {
+              "precision": 0.6371253118316235,
+              "recall": 0.5824742268041238,
+              "f1-score": 0.5567632848372025,
+              "support": 194.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              11,
+              41,
+              2,
+              7,
+              0
+            ],
+            [
+              3,
+              64,
+              1,
+              6,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              3,
+              8,
+              8,
+              38,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 44,
+              "a_to_b": 41,
+              "b_to_a": 3
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 14,
+              "a_to_b": 6,
+              "b_to_a": 8
+            },
+            {
+              "classes": [
+                "bus",
+                "motorcycle"
+              ],
+              "errors": 10,
+              "a_to_b": 7,
+              "b_to_a": 3
+            },
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 9,
+              "a_to_b": 1,
+              "b_to_a": 8
+            },
+            {
+              "classes": [
+                "bus",
+                "cyclist"
+              ],
+              "errors": 2,
+              "a_to_b": 2,
+              "b_to_a": 0
+            }
+          ]
+        },
+        "penn_fudan": {
+          "accuracy": 0.9444444444444444,
+          "precision_weighted": 1.0,
+          "recall_weighted": 0.9444444444444444,
+          "f1_weighted": 0.9714285714285713,
+          "f1_macro": 0.19428571428571428,
+          "per_class": {
+            "bus": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "car": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "cyclist": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "motorcycle": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "pedestrian": {
+              "precision": 1.0,
+              "recall": 0.9444444444444444,
+              "f1-score": 0.9714285714285714,
+              "support": 144.0
+            },
+            "accuracy": 0.9444444444444444,
+            "macro avg": {
+              "precision": 0.2,
+              "recall": 0.18888888888888888,
+              "f1-score": 0.19428571428571428,
+              "support": 144.0
+            },
+            "weighted avg": {
+              "precision": 1.0,
+              "recall": 0.9444444444444444,
+              "f1-score": 0.9714285714285713,
+              "support": 144.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              4,
+              3,
+              136
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 4,
+              "a_to_b": 0,
+              "b_to_a": 4
+            },
+            {
+              "classes": [
+                "motorcycle",
+                "pedestrian"
+              ],
+              "errors": 3,
+              "a_to_b": 0,
+              "b_to_a": 3
+            },
+            {
+              "classes": [
+                "car",
+                "pedestrian"
+              ],
+              "errors": 1,
+              "a_to_b": 0,
+              "b_to_a": 1
+            }
+          ]
+        }
+      }
+    },
+    "RandomForest": {
+      "accuracy": 0.751,
+      "precision_weighted": 0.7592499368937891,
+      "recall_weighted": 0.751,
+      "f1_weighted": 0.7477810591553962,
+      "f1_macro": 0.7477810591553962,
+      "per_class": {
+        "bus": {
+          "precision": 0.8201438848920863,
+          "recall": 0.57,
+          "f1-score": 0.672566371681416,
+          "support": 200.0
+        },
+        "car": {
+          "precision": 0.639344262295082,
+          "recall": 0.78,
+          "f1-score": 0.7027027027027027,
+          "support": 200.0
+        },
+        "cyclist": {
+          "precision": 0.7880434782608695,
+          "recall": 0.725,
+          "f1-score": 0.7552083333333334,
+          "support": 200.0
+        },
+        "motorcycle": {
+          "precision": 0.7563451776649747,
+          "recall": 0.745,
+          "f1-score": 0.7506297229219143,
+          "support": 200.0
+        },
+        "pedestrian": {
+          "precision": 0.7923728813559322,
+          "recall": 0.935,
+          "f1-score": 0.8577981651376146,
+          "support": 200.0
+        },
+        "accuracy": 0.751,
+        "macro avg": {
+          "precision": 0.759249936893789,
+          "recall": 0.7510000000000001,
+          "f1-score": 0.7477810591553962,
+          "support": 1000.0
+        },
+        "weighted avg": {
+          "precision": 0.7592499368937891,
+          "recall": 0.751,
+          "f1-score": 0.7477810591553962,
+          "support": 1000.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          114,
+          62,
+          3,
+          6,
+          15
+        ],
+        [
+          20,
+          156,
+          4,
+          13,
+          7
+        ],
+        [
+          3,
+          9,
+          145,
+          26,
+          17
+        ],
+        [
+          0,
+          17,
+          24,
+          149,
+          10
+        ],
+        [
+          2,
+          0,
+          8,
+          3,
+          187
+        ]
+      ],
+      "most_confused_pairs": [
+        {
+          "classes": [
+            "bus",
+            "car"
+          ],
+          "errors": 82,
+          "a_to_b": 62,
+          "b_to_a": 20
+        },
+        {
+          "classes": [
+            "cyclist",
+            "motorcycle"
+          ],
+          "errors": 50,
+          "a_to_b": 26,
+          "b_to_a": 24
+        },
+        {
+          "classes": [
+            "car",
+            "motorcycle"
+          ],
+          "errors": 30,
+          "a_to_b": 13,
+          "b_to_a": 17
+        },
+        {
+          "classes": [
+            "cyclist",
+            "pedestrian"
+          ],
+          "errors": 25,
+          "a_to_b": 17,
+          "b_to_a": 8
+        },
+        {
+          "classes": [
+            "bus",
+            "pedestrian"
+          ],
+          "errors": 17,
+          "a_to_b": 15,
+          "b_to_a": 2
+        }
+      ],
+      "configuration": {
+        "selection": "Toutes",
+        "model": "RandomForest",
+        "balancing": "Sans_correction",
+        "parameters": {}
+      },
+      "fit_diagnostics": {
+        "fit_seconds": 11.078,
+        "fit_samples": 4000,
+        "convergence_warning": false,
+        "warnings": "",
+        "iterations": null
+      },
+      "balanced_accuracy": 0.7510000000000001,
+      "mcc": 0.6918783082972642,
+      "by_source": {
+        "coco": {
+          "accuracy": 0.680921052631579,
+          "precision_weighted": 0.7752135417441995,
+          "recall_weighted": 0.680921052631579,
+          "f1_weighted": 0.7163371013590657,
+          "f1_macro": 0.5267800244680345,
+          "per_class": {
+            "bus": {
+              "precision": 0.5348837209302325,
+              "recall": 0.7666666666666667,
+              "f1-score": 0.6301369863013698,
+              "support": 30.0
+            },
+            "car": {
+              "precision": 0.8796296296296297,
+              "recall": 0.76,
+              "f1-score": 0.8154506437768241,
+              "support": 125.0
+            },
+            "cyclist": {
+              "precision": 0.8313253012048193,
+              "recall": 0.6052631578947368,
+              "f1-score": 0.700507614213198,
+              "support": 114.0
+            },
+            "motorcycle": {
+              "precision": 0.425531914893617,
+              "recall": 0.5714285714285714,
+              "f1-score": 0.4878048780487805,
+              "support": 35.0
+            },
+            "pedestrian": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "accuracy": 0.680921052631579,
+            "macro avg": {
+              "precision": 0.5342741133316598,
+              "recall": 0.540671679197995,
+              "f1-score": 0.5267800244680345,
+              "support": 304.0
+            },
+            "weighted avg": {
+              "precision": 0.7752135417441995,
+              "recall": 0.680921052631579,
+              "f1-score": 0.7163371013590657,
+              "support": 304.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              23,
+              4,
+              0,
+              2,
+              1
+            ],
+            [
+              17,
+              95,
+              3,
+              4,
+              6
+            ],
+            [
+              3,
+              8,
+              69,
+              21,
+              13
+            ],
+            [
+              0,
+              1,
+              11,
+              20,
+              3
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 32,
+              "a_to_b": 21,
+              "b_to_a": 11
+            },
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 21,
+              "a_to_b": 4,
+              "b_to_a": 17
+            },
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 13,
+              "a_to_b": 13,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "car",
+                "cyclist"
+              ],
+              "errors": 11,
+              "a_to_b": 3,
+              "b_to_a": 8
+            },
+            {
+              "classes": [
+                "car",
+                "pedestrian"
+              ],
+              "errors": 6,
+              "a_to_b": 6,
+              "b_to_a": 0
+            }
+          ]
+        },
+        "kaggle": {
+          "accuracy": 0.835195530726257,
+          "precision_weighted": 0.8906294323464434,
+          "recall_weighted": 0.835195530726257,
+          "f1_weighted": 0.8536624983073934,
+          "f1_macro": 0.6761765779071756,
+          "per_class": {
+            "bus": {
+              "precision": 0.9887640449438202,
+              "recall": 0.8073394495412844,
+              "f1-score": 0.8888888888888888,
+              "support": 109.0
+            },
+            "car": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "cyclist": {
+              "precision": 0.8260869565217391,
+              "recall": 0.8941176470588236,
+              "f1-score": 0.8587570621468926,
+              "support": 85.0
+            },
+            "motorcycle": {
+              "precision": 0.9540229885057471,
+              "recall": 0.7685185185185185,
+              "f1-score": 0.8512820512820513,
+              "support": 108.0
+            },
+            "pedestrian": {
+              "precision": 0.6753246753246753,
+              "recall": 0.9285714285714286,
+              "f1-score": 0.7819548872180451,
+              "support": 56.0
+            },
+            "accuracy": 0.835195530726257,
+            "macro avg": {
+              "precision": 0.6888397330591964,
+              "recall": 0.679709408738011,
+              "f1-score": 0.6761765779071756,
+              "support": 358.0
+            },
+            "weighted avg": {
+              "precision": 0.8906294323464434,
+              "recall": 0.835195530726257,
+              "f1-score": 0.8536624983073934,
+              "support": 358.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              88,
+              5,
+              2,
+              0,
+              14
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              76,
+              4,
+              4
+            ],
+            [
+              0,
+              7,
+              11,
+              83,
+              7
+            ],
+            [
+              1,
+              0,
+              3,
+              0,
+              52
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "bus",
+                "pedestrian"
+              ],
+              "errors": 15,
+              "a_to_b": 14,
+              "b_to_a": 1
+            },
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 15,
+              "a_to_b": 4,
+              "b_to_a": 11
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 7,
+              "a_to_b": 0,
+              "b_to_a": 7
+            },
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 7,
+              "a_to_b": 4,
+              "b_to_a": 3
+            },
+            {
+              "classes": [
+                "motorcycle",
+                "pedestrian"
+              ],
+              "errors": 7,
+              "a_to_b": 7,
+              "b_to_a": 0
+            }
+          ]
+        },
+        "original": {
+          "accuracy": 0.5670103092783505,
+          "precision_weighted": 0.5742016595423686,
+          "recall_weighted": 0.5670103092783505,
+          "f1_weighted": 0.49739855979277425,
+          "f1_macro": 0.2984077282584745,
+          "per_class": {
+            "bus": {
+              "precision": 0.5,
+              "recall": 0.04918032786885246,
+              "f1-score": 0.08955223880597014,
+              "support": 61.0
+            },
+            "car": {
+              "precision": 0.4959349593495935,
+              "recall": 0.8133333333333334,
+              "f1-score": 0.6161616161616161,
+              "support": 75.0
+            },
+            "cyclist": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 1.0
+            },
+            "motorcycle": {
+              "precision": 0.7666666666666667,
+              "recall": 0.8070175438596491,
+              "f1-score": 0.7863247863247863,
+              "support": 57.0
+            },
+            "pedestrian": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "accuracy": 0.5670103092783505,
+            "macro avg": {
+              "precision": 0.35252032520325205,
+              "recall": 0.33390624101236693,
+              "f1-score": 0.2984077282584745,
+              "support": 194.0
+            },
+            "weighted avg": {
+              "precision": 0.5742016595423686,
+              "recall": 0.5670103092783505,
+              "f1-score": 0.49739855979277425,
+              "support": 194.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              3,
+              53,
+              1,
+              4,
+              0
+            ],
+            [
+              3,
+              61,
+              1,
+              9,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              9,
+              2,
+              46,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 56,
+              "a_to_b": 53,
+              "b_to_a": 3
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 18,
+              "a_to_b": 9,
+              "b_to_a": 9
+            },
+            {
+              "classes": [
+                "bus",
+                "motorcycle"
+              ],
+              "errors": 4,
+              "a_to_b": 4,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 3,
+              "a_to_b": 1,
+              "b_to_a": 2
+            },
+            {
+              "classes": [
+                "bus",
+                "cyclist"
+              ],
+              "errors": 1,
+              "a_to_b": 1,
+              "b_to_a": 0
+            }
+          ]
+        },
+        "penn_fudan": {
+          "accuracy": 0.9375,
+          "precision_weighted": 1.0,
+          "recall_weighted": 0.9375,
+          "f1_weighted": 0.9677419354838711,
+          "f1_macro": 0.1935483870967742,
+          "per_class": {
+            "bus": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "car": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "cyclist": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "motorcycle": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "pedestrian": {
+              "precision": 1.0,
+              "recall": 0.9375,
+              "f1-score": 0.967741935483871,
+              "support": 144.0
+            },
+            "accuracy": 0.9375,
+            "macro avg": {
+              "precision": 0.2,
+              "recall": 0.1875,
+              "f1-score": 0.1935483870967742,
+              "support": 144.0
+            },
+            "weighted avg": {
+              "precision": 1.0,
+              "recall": 0.9375,
+              "f1-score": 0.9677419354838711,
+              "support": 144.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              5,
+              3,
+              135
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 5,
+              "a_to_b": 0,
+              "b_to_a": 5
+            },
+            {
+              "classes": [
+                "motorcycle",
+                "pedestrian"
+              ],
+              "errors": 3,
+              "a_to_b": 0,
+              "b_to_a": 3
+            },
+            {
+              "classes": [
+                "bus",
+                "pedestrian"
+              ],
+              "errors": 1,
+              "a_to_b": 0,
+              "b_to_a": 1
+            }
+          ]
+        }
+      }
+    },
+    "ExtraTrees": {
+      "accuracy": 0.735,
+      "precision_weighted": 0.7435768055527638,
+      "recall_weighted": 0.735,
+      "f1_weighted": 0.7312072146259243,
+      "f1_macro": 0.7312072146259243,
+      "per_class": {
+        "bus": {
+          "precision": 0.7972027972027972,
+          "recall": 0.57,
+          "f1-score": 0.6647230320699709,
+          "support": 200.0
+        },
+        "car": {
+          "precision": 0.6286919831223629,
+          "recall": 0.745,
+          "f1-score": 0.6819221967963387,
+          "support": 200.0
+        },
+        "cyclist": {
+          "precision": 0.8109756097560976,
+          "recall": 0.665,
+          "f1-score": 0.7307692307692307,
+          "support": 200.0
+        },
+        "motorcycle": {
+          "precision": 0.7014218009478673,
+          "recall": 0.74,
+          "f1-score": 0.7201946472019465,
+          "support": 200.0
+        },
+        "pedestrian": {
+          "precision": 0.7795918367346939,
+          "recall": 0.955,
+          "f1-score": 0.8584269662921349,
+          "support": 200.0
+        },
+        "accuracy": 0.735,
+        "macro avg": {
+          "precision": 0.7435768055527638,
+          "recall": 0.735,
+          "f1-score": 0.7312072146259243,
+          "support": 1000.0
+        },
+        "weighted avg": {
+          "precision": 0.7435768055527638,
+          "recall": 0.735,
+          "f1-score": 0.7312072146259243,
+          "support": 1000.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          114,
+          60,
+          2,
+          5,
+          19
+        ],
+        [
+          24,
+          149,
+          2,
+          17,
+          8
+        ],
+        [
+          2,
+          10,
+          133,
+          37,
+          18
+        ],
+        [
+          2,
+          18,
+          23,
+          148,
+          9
+        ],
+        [
+          1,
+          0,
+          4,
+          4,
+          191
+        ]
+      ],
+      "most_confused_pairs": [
+        {
+          "classes": [
+            "bus",
+            "car"
+          ],
+          "errors": 84,
+          "a_to_b": 60,
+          "b_to_a": 24
+        },
+        {
+          "classes": [
+            "cyclist",
+            "motorcycle"
+          ],
+          "errors": 60,
+          "a_to_b": 37,
+          "b_to_a": 23
+        },
+        {
+          "classes": [
+            "car",
+            "motorcycle"
+          ],
+          "errors": 35,
+          "a_to_b": 17,
+          "b_to_a": 18
+        },
+        {
+          "classes": [
+            "cyclist",
+            "pedestrian"
+          ],
+          "errors": 22,
+          "a_to_b": 18,
+          "b_to_a": 4
+        },
+        {
+          "classes": [
+            "bus",
+            "pedestrian"
+          ],
+          "errors": 20,
+          "a_to_b": 19,
+          "b_to_a": 1
+        }
+      ],
+      "configuration": {
+        "selection": "ANOVA_50pct",
+        "model": "ExtraTrees",
+        "balancing": "Sans_correction",
+        "parameters": {}
+      },
+      "fit_diagnostics": {
+        "fit_seconds": 3.318,
+        "fit_samples": 4000,
+        "convergence_warning": false,
+        "warnings": "",
+        "iterations": null
+      },
+      "balanced_accuracy": 0.735,
+      "mcc": 0.6721444994557325,
+      "by_source": {
+        "coco": {
+          "accuracy": 0.6447368421052632,
+          "precision_weighted": 0.7571305509395468,
+          "recall_weighted": 0.6447368421052632,
+          "f1_weighted": 0.679661466351386,
+          "f1_macro": 0.5005067674537353,
+          "per_class": {
+            "bus": {
+              "precision": 0.5333333333333333,
+              "recall": 0.8,
+              "f1-score": 0.64,
+              "support": 30.0
+            },
+            "car": {
+              "precision": 0.8482142857142857,
+              "recall": 0.76,
+              "f1-score": 0.8016877637130801,
+              "support": 125.0
+            },
+            "cyclist": {
+              "precision": 0.8405797101449275,
+              "recall": 0.5087719298245614,
+              "f1-score": 0.6338797814207651,
+              "support": 114.0
+            },
+            "motorcycle": {
+              "precision": 0.35185185185185186,
+              "recall": 0.5428571428571428,
+              "f1-score": 0.42696629213483145,
+              "support": 35.0
+            },
+            "pedestrian": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "accuracy": 0.6447368421052632,
+            "macro avg": {
+              "precision": 0.5147958362088797,
+              "recall": 0.5223258145363407,
+              "f1-score": 0.5005067674537353,
+              "support": 304.0
+            },
+            "weighted avg": {
+              "precision": 0.7571305509395468,
+              "recall": 0.6447368421052632,
+              "f1-score": 0.679661466351386,
+              "support": 304.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              24,
+              4,
+              0,
+              1,
+              1
+            ],
+            [
+              19,
+              95,
+              2,
+              3,
+              6
+            ],
+            [
+              2,
+              9,
+              58,
+              31,
+              14
+            ],
+            [
+              0,
+              4,
+              9,
+              19,
+              3
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 40,
+              "a_to_b": 31,
+              "b_to_a": 9
+            },
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 23,
+              "a_to_b": 4,
+              "b_to_a": 19
+            },
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 14,
+              "a_to_b": 14,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "car",
+                "cyclist"
+              ],
+              "errors": 11,
+              "a_to_b": 2,
+              "b_to_a": 9
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 7,
+              "a_to_b": 3,
+              "b_to_a": 4
+            }
+          ]
+        },
+        "kaggle": {
+          "accuracy": 0.8324022346368715,
+          "precision_weighted": 0.885573082136854,
+          "recall_weighted": 0.8324022346368715,
+          "f1_weighted": 0.8476898401125651,
+          "f1_macro": 0.6718112760664608,
+          "per_class": {
+            "bus": {
+              "precision": 1.0,
+              "recall": 0.7889908256880734,
+              "f1-score": 0.882051282051282,
+              "support": 109.0
+            },
+            "car": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "cyclist": {
+              "precision": 0.8152173913043478,
+              "recall": 0.8823529411764706,
+              "f1-score": 0.847457627118644,
+              "support": 85.0
+            },
+            "motorcycle": {
+              "precision": 0.9431818181818182,
+              "recall": 0.7685185185185185,
+              "f1-score": 0.8469387755102041,
+              "support": 108.0
+            },
+            "pedestrian": {
+              "precision": 0.6585365853658537,
+              "recall": 0.9642857142857143,
+              "f1-score": 0.782608695652174,
+              "support": 56.0
+            },
+            "accuracy": 0.8324022346368715,
+            "macro avg": {
+              "precision": 0.6833871589704039,
+              "recall": 0.6808295999337555,
+              "f1-score": 0.6718112760664608,
+              "support": 358.0
+            },
+            "weighted avg": {
+              "precision": 0.885573082136854,
+              "recall": 0.8324022346368715,
+              "f1-score": 0.8476898401125651,
+              "support": 358.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              86,
+              3,
+              2,
+              0,
+              18
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              75,
+              5,
+              4
+            ],
+            [
+              0,
+              6,
+              13,
+              83,
+              6
+            ],
+            [
+              0,
+              0,
+              2,
+              0,
+              54
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "bus",
+                "pedestrian"
+              ],
+              "errors": 18,
+              "a_to_b": 18,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 18,
+              "a_to_b": 5,
+              "b_to_a": 13
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 6,
+              "a_to_b": 0,
+              "b_to_a": 6
+            },
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 6,
+              "a_to_b": 4,
+              "b_to_a": 2
+            },
+            {
+              "classes": [
+                "motorcycle",
+                "pedestrian"
+              ],
+              "errors": 6,
+              "a_to_b": 6,
+              "b_to_a": 0
+            }
+          ]
+        },
+        "original": {
+          "accuracy": 0.5360824742268041,
+          "precision_weighted": 0.5038024279619977,
+          "recall_weighted": 0.5360824742268041,
+          "f1_weighted": 0.4762523880542435,
+          "f1_macro": 0.28672610487968553,
+          "per_class": {
+            "bus": {
+              "precision": 0.36363636363636365,
+              "recall": 0.06557377049180328,
+              "f1-score": 0.1111111111111111,
+              "support": 61.0
+            },
+            "car": {
+              "precision": 0.46956521739130436,
+              "recall": 0.72,
+              "f1-score": 0.5684210526315789,
+              "support": 75.0
+            },
+            "cyclist": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 1.0
+            },
+            "motorcycle": {
+              "precision": 0.7076923076923077,
+              "recall": 0.8070175438596491,
+              "f1-score": 0.7540983606557377,
+              "support": 57.0
+            },
+            "pedestrian": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "accuracy": 0.5360824742268041,
+            "macro avg": {
+              "precision": 0.30817877774399516,
+              "recall": 0.31851826287029045,
+              "f1-score": 0.28672610487968553,
+              "support": 194.0
+            },
+            "weighted avg": {
+              "precision": 0.5038024279619977,
+              "recall": 0.5360824742268041,
+              "f1-score": 0.4762523880542435,
+              "support": 194.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              4,
+              53,
+              0,
+              4,
+              0
+            ],
+            [
+              5,
+              54,
+              0,
+              14,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              2,
+              8,
+              1,
+              46,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 58,
+              "a_to_b": 53,
+              "b_to_a": 5
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 22,
+              "a_to_b": 14,
+              "b_to_a": 8
+            },
+            {
+              "classes": [
+                "bus",
+                "motorcycle"
+              ],
+              "errors": 6,
+              "a_to_b": 4,
+              "b_to_a": 2
+            },
+            {
+              "classes": [
+                "car",
+                "pedestrian"
+              ],
+              "errors": 2,
+              "a_to_b": 2,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 2,
+              "a_to_b": 1,
+              "b_to_a": 1
+            }
+          ]
+        },
+        "penn_fudan": {
+          "accuracy": 0.9513888888888888,
+          "precision_weighted": 1.0,
+          "recall_weighted": 0.9513888888888888,
+          "f1_weighted": 0.9750889679715302,
+          "f1_macro": 0.19501779359430604,
+          "per_class": {
+            "bus": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "car": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "cyclist": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "motorcycle": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "pedestrian": {
+              "precision": 1.0,
+              "recall": 0.9513888888888888,
+              "f1-score": 0.9750889679715302,
+              "support": 144.0
+            },
+            "accuracy": 0.9513888888888888,
+            "macro avg": {
+              "precision": 0.2,
+              "recall": 0.19027777777777777,
+              "f1-score": 0.19501779359430604,
+              "support": 144.0
+            },
+            "weighted avg": {
+              "precision": 1.0,
+              "recall": 0.9513888888888888,
+              "f1-score": 0.9750889679715302,
+              "support": 144.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              2,
+              4,
+              137
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "motorcycle",
+                "pedestrian"
+              ],
+              "errors": 4,
+              "a_to_b": 0,
+              "b_to_a": 4
+            },
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 2,
+              "a_to_b": 0,
+              "b_to_a": 2
+            },
+            {
+              "classes": [
+                "bus",
+                "pedestrian"
+              ],
+              "errors": 1,
+              "a_to_b": 0,
+              "b_to_a": 1
+            }
+          ]
+        }
+      }
+    },
+    "kNN": {
+      "accuracy": 0.747,
+      "precision_weighted": 0.7512335865978057,
+      "recall_weighted": 0.747,
+      "f1_weighted": 0.744549038429234,
+      "f1_macro": 0.744549038429234,
+      "per_class": {
+        "bus": {
+          "precision": 0.7272727272727273,
+          "recall": 0.72,
+          "f1-score": 0.7236180904522613,
+          "support": 200.0
+        },
+        "car": {
+          "precision": 0.7516339869281046,
+          "recall": 0.575,
+          "f1-score": 0.6515580736543909,
+          "support": 200.0
+        },
+        "cyclist": {
+          "precision": 0.7717391304347826,
+          "recall": 0.71,
+          "f1-score": 0.7395833333333334,
+          "support": 200.0
+        },
+        "motorcycle": {
+          "precision": 0.6305220883534136,
+          "recall": 0.785,
+          "f1-score": 0.6993318485523385,
+          "support": 200.0
+        },
+        "pedestrian": {
+          "precision": 0.875,
+          "recall": 0.945,
+          "f1-score": 0.9086538461538461,
+          "support": 200.0
+        },
+        "accuracy": 0.747,
+        "macro avg": {
+          "precision": 0.7512335865978056,
+          "recall": 0.747,
+          "f1-score": 0.744549038429234,
+          "support": 1000.0
+        },
+        "weighted avg": {
+          "precision": 0.7512335865978057,
+          "recall": 0.747,
+          "f1-score": 0.744549038429234,
+          "support": 1000.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          144,
+          28,
+          8,
+          12,
+          8
+        ],
+        [
+          41,
+          115,
+          5,
+          36,
+          3
+        ],
+        [
+          9,
+          1,
+          142,
+          36,
+          12
+        ],
+        [
+          4,
+          9,
+          26,
+          157,
+          4
+        ],
+        [
+          0,
+          0,
+          3,
+          8,
+          189
+        ]
+      ],
+      "most_confused_pairs": [
+        {
+          "classes": [
+            "bus",
+            "car"
+          ],
+          "errors": 69,
+          "a_to_b": 28,
+          "b_to_a": 41
+        },
+        {
+          "classes": [
+            "cyclist",
+            "motorcycle"
+          ],
+          "errors": 62,
+          "a_to_b": 36,
+          "b_to_a": 26
+        },
+        {
+          "classes": [
+            "car",
+            "motorcycle"
+          ],
+          "errors": 45,
+          "a_to_b": 36,
+          "b_to_a": 9
+        },
+        {
+          "classes": [
+            "bus",
+            "cyclist"
+          ],
+          "errors": 17,
+          "a_to_b": 8,
+          "b_to_a": 9
+        },
+        {
+          "classes": [
+            "bus",
+            "motorcycle"
+          ],
+          "errors": 16,
+          "a_to_b": 12,
+          "b_to_a": 4
+        }
+      ],
+      "configuration": {
+        "selection": "ANOVA_50pct",
+        "model": "kNN",
+        "balancing": "Correction_train",
+        "parameters": {}
+      },
+      "fit_diagnostics": {
+        "fit_seconds": 0.565,
+        "fit_samples": 4000,
+        "convergence_warning": false,
+        "warnings": "",
+        "iterations": null
+      },
+      "balanced_accuracy": 0.747,
+      "mcc": 0.6859511476188463,
+      "by_source": {
+        "coco": {
+          "accuracy": 0.6447368421052632,
+          "precision_weighted": 0.8080942732718907,
+          "recall_weighted": 0.6447368421052632,
+          "f1_weighted": 0.684395060241616,
+          "f1_macro": 0.4998772795831619,
+          "per_class": {
+            "bus": {
+              "precision": 0.4,
+              "recall": 0.8,
+              "f1-score": 0.5333333333333333,
+              "support": 30.0
+            },
+            "car": {
+              "precision": 0.927710843373494,
+              "recall": 0.616,
+              "f1-score": 0.7403846153846154,
+              "support": 125.0
+            },
+            "cyclist": {
+              "precision": 0.9178082191780822,
+              "recall": 0.5877192982456141,
+              "f1-score": 0.7165775401069518,
+              "support": 114.0
+            },
+            "motorcycle": {
+              "precision": 0.37333333333333335,
+              "recall": 0.8,
+              "f1-score": 0.509090909090909,
+              "support": 35.0
+            },
+            "pedestrian": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "accuracy": 0.6447368421052632,
+            "macro avg": {
+              "precision": 0.5237704791769819,
+              "recall": 0.5607438596491228,
+              "f1-score": 0.4998772795831619,
+              "support": 304.0
+            },
+            "weighted avg": {
+              "precision": 0.8080942732718907,
+              "recall": 0.6447368421052632,
+              "f1-score": 0.684395060241616,
+              "support": 304.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              24,
+              4,
+              1,
+              1,
+              0
+            ],
+            [
+              29,
+              77,
+              1,
+              15,
+              3
+            ],
+            [
+              6,
+              1,
+              67,
+              31,
+              9
+            ],
+            [
+              1,
+              1,
+              4,
+              28,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 35,
+              "a_to_b": 31,
+              "b_to_a": 4
+            },
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 33,
+              "a_to_b": 4,
+              "b_to_a": 29
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 16,
+              "a_to_b": 15,
+              "b_to_a": 1
+            },
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 9,
+              "a_to_b": 9,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "bus",
+                "cyclist"
+              ],
+              "errors": 7,
+              "a_to_b": 1,
+              "b_to_a": 6
+            }
+          ]
+        },
+        "kaggle": {
+          "accuracy": 0.8603351955307262,
+          "precision_weighted": 0.8876667225318821,
+          "recall_weighted": 0.8603351955307262,
+          "f1_weighted": 0.8694127020229613,
+          "f1_macro": 0.6942777162366278,
+          "per_class": {
+            "bus": {
+              "precision": 0.9494949494949495,
+              "recall": 0.8623853211009175,
+              "f1-score": 0.9038461538461539,
+              "support": 109.0
+            },
+            "car": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "cyclist": {
+              "precision": 0.7978723404255319,
+              "recall": 0.8823529411764706,
+              "f1-score": 0.8379888268156425,
+              "support": 85.0
+            },
+            "motorcycle": {
+              "precision": 0.9444444444444444,
+              "recall": 0.7870370370370371,
+              "f1-score": 0.8585858585858586,
+              "support": 108.0
+            },
+            "pedestrian": {
+              "precision": 0.7941176470588235,
+              "recall": 0.9642857142857143,
+              "f1-score": 0.8709677419354839,
+              "support": 56.0
+            },
+            "accuracy": 0.8603351955307262,
+            "macro avg": {
+              "precision": 0.6971858762847498,
+              "recall": 0.6992122027200279,
+              "f1-score": 0.6942777162366278,
+              "support": 358.0
+            },
+            "weighted avg": {
+              "precision": 0.8876667225318821,
+              "recall": 0.8603351955307262,
+              "f1-score": 0.8694127020229613,
+              "support": 358.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              94,
+              2,
+              5,
+              0,
+              8
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              3,
+              0,
+              75,
+              4,
+              3
+            ],
+            [
+              2,
+              5,
+              13,
+              85,
+              3
+            ],
+            [
+              0,
+              0,
+              1,
+              1,
+              54
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 17,
+              "a_to_b": 4,
+              "b_to_a": 13
+            },
+            {
+              "classes": [
+                "bus",
+                "cyclist"
+              ],
+              "errors": 8,
+              "a_to_b": 5,
+              "b_to_a": 3
+            },
+            {
+              "classes": [
+                "bus",
+                "pedestrian"
+              ],
+              "errors": 8,
+              "a_to_b": 8,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 5,
+              "a_to_b": 0,
+              "b_to_a": 5
+            },
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 4,
+              "a_to_b": 3,
+              "b_to_a": 1
+            }
+          ]
+        },
+        "original": {
+          "accuracy": 0.5567010309278351,
+          "precision_weighted": 0.6107020127638684,
+          "recall_weighted": 0.5567010309278351,
+          "f1_weighted": 0.5693669260153735,
+          "f1_macro": 0.3454882111183214,
+          "per_class": {
+            "bus": {
+              "precision": 0.6666666666666666,
+              "recall": 0.4262295081967213,
+              "f1-score": 0.52,
+              "support": 61.0
+            },
+            "car": {
+              "precision": 0.6031746031746031,
+              "recall": 0.5066666666666667,
+              "f1-score": 0.5507246376811594,
+              "support": 75.0
+            },
+            "cyclist": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 1.0
+            },
+            "motorcycle": {
+              "precision": 0.5714285714285714,
+              "recall": 0.7719298245614035,
+              "f1-score": 0.6567164179104478,
+              "support": 57.0
+            },
+            "pedestrian": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "accuracy": 0.5567010309278351,
+            "macro avg": {
+              "precision": 0.3682539682539682,
+              "recall": 0.34096519988495827,
+              "f1-score": 0.3454882111183214,
+              "support": 194.0
+            },
+            "weighted avg": {
+              "precision": 0.6107020127638684,
+              "recall": 0.5567010309278351,
+              "f1-score": 0.5693669260153735,
+              "support": 194.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              26,
+              22,
+              2,
+              11,
+              0
+            ],
+            [
+              12,
+              38,
+              4,
+              21,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              3,
+              9,
+              44,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 34,
+              "a_to_b": 22,
+              "b_to_a": 12
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 24,
+              "a_to_b": 21,
+              "b_to_a": 3
+            },
+            {
+              "classes": [
+                "bus",
+                "motorcycle"
+              ],
+              "errors": 12,
+              "a_to_b": 11,
+              "b_to_a": 1
+            },
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 10,
+              "a_to_b": 1,
+              "b_to_a": 9
+            },
+            {
+              "classes": [
+                "car",
+                "cyclist"
+              ],
+              "errors": 4,
+              "a_to_b": 4,
+              "b_to_a": 0
+            }
+          ]
+        },
+        "penn_fudan": {
+          "accuracy": 0.9375,
+          "precision_weighted": 1.0,
+          "recall_weighted": 0.9375,
+          "f1_weighted": 0.9677419354838711,
+          "f1_macro": 0.1935483870967742,
+          "per_class": {
+            "bus": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "car": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "cyclist": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "motorcycle": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "pedestrian": {
+              "precision": 1.0,
+              "recall": 0.9375,
+              "f1-score": 0.967741935483871,
+              "support": 144.0
+            },
+            "accuracy": 0.9375,
+            "macro avg": {
+              "precision": 0.2,
+              "recall": 0.1875,
+              "f1-score": 0.1935483870967742,
+              "support": 144.0
+            },
+            "weighted avg": {
+              "precision": 1.0,
+              "recall": 0.9375,
+              "f1-score": 0.9677419354838711,
+              "support": 144.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              2,
+              7,
+              135
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "motorcycle",
+                "pedestrian"
+              ],
+              "errors": 7,
+              "a_to_b": 0,
+              "b_to_a": 7
+            },
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 2,
+              "a_to_b": 0,
+              "b_to_a": 2
+            }
+          ]
+        }
+      }
+    },
+    "DecisionTree": {
+      "accuracy": 0.554,
+      "precision_weighted": 0.5522282077196563,
+      "recall_weighted": 0.554,
+      "f1_weighted": 0.552764966275475,
+      "f1_macro": 0.552764966275475,
+      "per_class": {
+        "bus": {
+          "precision": 0.49206349206349204,
+          "recall": 0.465,
+          "f1-score": 0.4781491002570694,
+          "support": 200.0
+        },
+        "car": {
+          "precision": 0.45023696682464454,
+          "recall": 0.475,
+          "f1-score": 0.46228710462287104,
+          "support": 200.0
+        },
+        "cyclist": {
+          "precision": 0.5362318840579711,
+          "recall": 0.555,
+          "f1-score": 0.5454545454545454,
+          "support": 200.0
+        },
+        "motorcycle": {
+          "precision": 0.5,
+          "recall": 0.465,
+          "f1-score": 0.48186528497409326,
+          "support": 200.0
+        },
+        "pedestrian": {
+          "precision": 0.782608695652174,
+          "recall": 0.81,
+          "f1-score": 0.7960687960687961,
+          "support": 200.0
+        },
+        "accuracy": 0.554,
+        "macro avg": {
+          "precision": 0.5522282077196563,
+          "recall": 0.554,
+          "f1-score": 0.552764966275475,
+          "support": 1000.0
+        },
+        "weighted avg": {
+          "precision": 0.5522282077196563,
+          "recall": 0.554,
+          "f1-score": 0.552764966275475,
+          "support": 1000.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          93,
+          58,
+          16,
+          22,
+          11
+        ],
+        [
+          57,
+          95,
+          19,
+          24,
+          5
+        ],
+        [
+          14,
+          18,
+          111,
+          37,
+          20
+        ],
+        [
+          18,
+          35,
+          45,
+          93,
+          9
+        ],
+        [
+          7,
+          5,
+          16,
+          10,
+          162
+        ]
+      ],
+      "most_confused_pairs": [
+        {
+          "classes": [
+            "bus",
+            "car"
+          ],
+          "errors": 115,
+          "a_to_b": 58,
+          "b_to_a": 57
+        },
+        {
+          "classes": [
+            "cyclist",
+            "motorcycle"
+          ],
+          "errors": 82,
+          "a_to_b": 37,
+          "b_to_a": 45
+        },
+        {
+          "classes": [
+            "car",
+            "motorcycle"
+          ],
+          "errors": 59,
+          "a_to_b": 24,
+          "b_to_a": 35
+        },
+        {
+          "classes": [
+            "bus",
+            "motorcycle"
+          ],
+          "errors": 40,
+          "a_to_b": 22,
+          "b_to_a": 18
+        },
+        {
+          "classes": [
+            "car",
+            "cyclist"
+          ],
+          "errors": 37,
+          "a_to_b": 19,
+          "b_to_a": 18
+        }
+      ],
+      "configuration": {
+        "selection": "ANOVA_50pct",
+        "model": "DecisionTree",
+        "balancing": "Correction_train",
+        "parameters": {}
+      },
+      "fit_diagnostics": {
+        "fit_seconds": 5.87,
+        "fit_samples": 4000,
+        "convergence_warning": false,
+        "warnings": "",
+        "iterations": null
+      },
+      "balanced_accuracy": 0.554,
+      "mcc": 0.44264831203095806,
+      "by_source": {
+        "coco": {
+          "accuracy": 0.4473684210526316,
+          "precision_weighted": 0.6048957315476532,
+          "recall_weighted": 0.4473684210526316,
+          "f1_weighted": 0.492231296722366,
+          "f1_macro": 0.33814750334267324,
+          "per_class": {
+            "bus": {
+              "precision": 0.2638888888888889,
+              "recall": 0.6333333333333333,
+              "f1-score": 0.37254901960784315,
+              "support": 30.0
+            },
+            "car": {
+              "precision": 0.7439024390243902,
+              "recall": 0.488,
+              "f1-score": 0.5893719806763285,
+              "support": 125.0
+            },
+            "cyclist": {
+              "precision": 0.6716417910447762,
+              "recall": 0.39473684210526316,
+              "f1-score": 0.4972375690607735,
+              "support": 114.0
+            },
+            "motorcycle": {
+              "precision": 0.18333333333333332,
+              "recall": 0.3142857142857143,
+              "f1-score": 0.23157894736842105,
+              "support": 35.0
+            },
+            "pedestrian": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "accuracy": 0.4473684210526316,
+            "macro avg": {
+              "precision": 0.37255329045827773,
+              "recall": 0.36607117794486216,
+              "f1-score": 0.33814750334267324,
+              "support": 304.0
+            },
+            "weighted avg": {
+              "precision": 0.6048957315476532,
+              "recall": 0.4473684210526316,
+              "f1-score": 0.492231296722366,
+              "support": 304.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              19,
+              6,
+              1,
+              4,
+              0
+            ],
+            [
+              39,
+              61,
+              9,
+              12,
+              4
+            ],
+            [
+              10,
+              10,
+              45,
+              33,
+              16
+            ],
+            [
+              4,
+              5,
+              12,
+              11,
+              3
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 45,
+              "a_to_b": 6,
+              "b_to_a": 39
+            },
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 45,
+              "a_to_b": 33,
+              "b_to_a": 12
+            },
+            {
+              "classes": [
+                "car",
+                "cyclist"
+              ],
+              "errors": 19,
+              "a_to_b": 9,
+              "b_to_a": 10
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 17,
+              "a_to_b": 12,
+              "b_to_a": 5
+            },
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 16,
+              "a_to_b": 16,
+              "b_to_a": 0
+            }
+          ]
+        },
+        "kaggle": {
+          "accuracy": 0.6536312849162011,
+          "precision_weighted": 0.7618008689581984,
+          "recall_weighted": 0.6536312849162011,
+          "f1_weighted": 0.6922383925683366,
+          "f1_macro": 0.5582242845541364,
+          "per_class": {
+            "bus": {
+              "precision": 0.825,
+              "recall": 0.6055045871559633,
+              "f1-score": 0.6984126984126984,
+              "support": 109.0
+            },
+            "car": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "cyclist": {
+              "precision": 0.6666666666666666,
+              "recall": 0.7764705882352941,
+              "f1-score": 0.717391304347826,
+              "support": 85.0
+            },
+            "motorcycle": {
+              "precision": 0.8169014084507042,
+              "recall": 0.5370370370370371,
+              "f1-score": 0.6480446927374302,
+              "support": 108.0
+            },
+            "pedestrian": {
+              "precision": 0.676923076923077,
+              "recall": 0.7857142857142857,
+              "f1-score": 0.7272727272727273,
+              "support": 56.0
+            },
+            "accuracy": 0.6536312849162011,
+            "macro avg": {
+              "precision": 0.5970982304080896,
+              "recall": 0.540945299628516,
+              "f1-score": 0.5582242845541364,
+              "support": 358.0
+            },
+            "weighted avg": {
+              "precision": 0.7618008689581984,
+              "recall": 0.6536312849162011,
+              "f1-score": 0.6922383925683366,
+              "support": 358.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              66,
+              16,
+              9,
+              7,
+              11
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              4,
+              7,
+              66,
+              4,
+              4
+            ],
+            [
+              6,
+              17,
+              21,
+              58,
+              6
+            ],
+            [
+              4,
+              3,
+              3,
+              2,
+              44
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 25,
+              "a_to_b": 4,
+              "b_to_a": 21
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 17,
+              "a_to_b": 0,
+              "b_to_a": 17
+            },
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 16,
+              "a_to_b": 16,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "bus",
+                "pedestrian"
+              ],
+              "errors": 15,
+              "a_to_b": 11,
+              "b_to_a": 4
+            },
+            {
+              "classes": [
+                "bus",
+                "cyclist"
+              ],
+              "errors": 13,
+              "a_to_b": 9,
+              "b_to_a": 4
+            }
+          ]
+        },
+        "original": {
+          "accuracy": 0.3402061855670103,
+          "precision_weighted": 0.38049725264091167,
+          "recall_weighted": 0.3402061855670103,
+          "f1_weighted": 0.35390127946562805,
+          "f1_macro": 0.21152649402897666,
+          "per_class": {
+            "bus": {
+              "precision": 0.23529411764705882,
+              "recall": 0.13114754098360656,
+              "f1-score": 0.16842105263157894,
+              "support": 61.0
+            },
+            "car": {
+              "precision": 0.40476190476190477,
+              "recall": 0.4533333333333333,
+              "f1-score": 0.4276729559748428,
+              "support": 75.0
+            },
+            "cyclist": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 1.0
+            },
+            "motorcycle": {
+              "precision": 0.5106382978723404,
+              "recall": 0.42105263157894735,
+              "f1-score": 0.46153846153846156,
+              "support": 57.0
+            },
+            "pedestrian": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "accuracy": 0.3402061855670103,
+            "macro avg": {
+              "precision": 0.23013886405626077,
+              "recall": 0.20110670117917745,
+              "f1-score": 0.21152649402897666,
+              "support": 194.0
+            },
+            "weighted avg": {
+              "precision": 0.38049725264091167,
+              "recall": 0.3402061855670103,
+              "f1-score": 0.35390127946562805,
+              "support": 194.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              8,
+              36,
+              6,
+              11,
+              0
+            ],
+            [
+              18,
+              34,
+              10,
+              12,
+              1
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              8,
+              13,
+              12,
+              24,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 54,
+              "a_to_b": 36,
+              "b_to_a": 18
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 25,
+              "a_to_b": 12,
+              "b_to_a": 13
+            },
+            {
+              "classes": [
+                "bus",
+                "motorcycle"
+              ],
+              "errors": 19,
+              "a_to_b": 11,
+              "b_to_a": 8
+            },
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 12,
+              "a_to_b": 0,
+              "b_to_a": 12
+            },
+            {
+              "classes": [
+                "car",
+                "cyclist"
+              ],
+              "errors": 11,
+              "a_to_b": 10,
+              "b_to_a": 1
+            }
+          ]
+        },
+        "penn_fudan": {
+          "accuracy": 0.8194444444444444,
+          "precision_weighted": 1.0,
+          "recall_weighted": 0.8194444444444444,
+          "f1_weighted": 0.9007633587786259,
+          "f1_macro": 0.1801526717557252,
+          "per_class": {
+            "bus": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "car": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "cyclist": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "motorcycle": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "pedestrian": {
+              "precision": 1.0,
+              "recall": 0.8194444444444444,
+              "f1-score": 0.9007633587786259,
+              "support": 144.0
+            },
+            "accuracy": 0.8194444444444444,
+            "macro avg": {
+              "precision": 0.2,
+              "recall": 0.1638888888888889,
+              "f1-score": 0.1801526717557252,
+              "support": 144.0
+            },
+            "weighted avg": {
+              "precision": 1.0,
+              "recall": 0.8194444444444444,
+              "f1-score": 0.9007633587786259,
+              "support": 144.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              3,
+              2,
+              13,
+              8,
+              118
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 13,
+              "a_to_b": 0,
+              "b_to_a": 13
+            },
+            {
+              "classes": [
+                "motorcycle",
+                "pedestrian"
+              ],
+              "errors": 8,
+              "a_to_b": 0,
+              "b_to_a": 8
+            },
+            {
+              "classes": [
+                "bus",
+                "pedestrian"
+              ],
+              "errors": 3,
+              "a_to_b": 0,
+              "b_to_a": 3
+            },
+            {
+              "classes": [
+                "car",
+                "pedestrian"
+              ],
+              "errors": 2,
+              "a_to_b": 0,
+              "b_to_a": 2
+            }
+          ]
+        }
+      }
+    },
+    "GaussianNB": {
+      "accuracy": 0.715,
+      "precision_weighted": 0.7368959041159288,
+      "recall_weighted": 0.715,
+      "f1_weighted": 0.7078597359916284,
+      "f1_macro": 0.7078597359916283,
+      "per_class": {
+        "bus": {
+          "precision": 0.8672566371681416,
+          "recall": 0.49,
+          "f1-score": 0.6261980830670927,
+          "support": 200.0
+        },
+        "car": {
+          "precision": 0.6285714285714286,
+          "recall": 0.77,
+          "f1-score": 0.6921348314606741,
+          "support": 200.0
+        },
+        "cyclist": {
+          "precision": 0.7947019867549668,
+          "recall": 0.6,
+          "f1-score": 0.6837606837606838,
+          "support": 200.0
+        },
+        "motorcycle": {
+          "precision": 0.6595744680851063,
+          "recall": 0.775,
+          "f1-score": 0.7126436781609196,
+          "support": 200.0
+        },
+        "pedestrian": {
+          "precision": 0.734375,
+          "recall": 0.94,
+          "f1-score": 0.8245614035087719,
+          "support": 200.0
+        },
+        "accuracy": 0.715,
+        "macro avg": {
+          "precision": 0.7368959041159286,
+          "recall": 0.715,
+          "f1-score": 0.7078597359916283,
+          "support": 1000.0
+        },
+        "weighted avg": {
+          "precision": 0.7368959041159288,
+          "recall": 0.715,
+          "f1-score": 0.7078597359916284,
+          "support": 1000.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          98,
+          64,
+          3,
+          11,
+          24
+        ],
+        [
+          13,
+          154,
+          6,
+          18,
+          9
+        ],
+        [
+          1,
+          10,
+          120,
+          49,
+          20
+        ],
+        [
+          0,
+          17,
+          13,
+          155,
+          15
+        ],
+        [
+          1,
+          0,
+          9,
+          2,
+          188
+        ]
+      ],
+      "most_confused_pairs": [
+        {
+          "classes": [
+            "bus",
+            "car"
+          ],
+          "errors": 77,
+          "a_to_b": 64,
+          "b_to_a": 13
+        },
+        {
+          "classes": [
+            "cyclist",
+            "motorcycle"
+          ],
+          "errors": 62,
+          "a_to_b": 49,
+          "b_to_a": 13
+        },
+        {
+          "classes": [
+            "car",
+            "motorcycle"
+          ],
+          "errors": 35,
+          "a_to_b": 18,
+          "b_to_a": 17
+        },
+        {
+          "classes": [
+            "cyclist",
+            "pedestrian"
+          ],
+          "errors": 29,
+          "a_to_b": 20,
+          "b_to_a": 9
+        },
+        {
+          "classes": [
+            "bus",
+            "pedestrian"
+          ],
+          "errors": 25,
+          "a_to_b": 24,
+          "b_to_a": 1
+        }
+      ],
+      "configuration": {
+        "selection": "Importance_RF_50pct",
+        "model": "GaussianNB",
+        "balancing": "Correction_train",
+        "parameters": {}
+      },
+      "fit_diagnostics": {
+        "fit_seconds": 6.247,
+        "fit_samples": 4000,
+        "convergence_warning": false,
+        "warnings": "",
+        "iterations": null
+      },
+      "balanced_accuracy": 0.715,
+      "mcc": 0.6504333922517539,
+      "by_source": {
+        "coco": {
+          "accuracy": 0.631578947368421,
+          "precision_weighted": 0.7720021206863312,
+          "recall_weighted": 0.631578947368421,
+          "f1_weighted": 0.6655946226819431,
+          "f1_macro": 0.5010858838131564,
+          "per_class": {
+            "bus": {
+              "precision": 0.6571428571428571,
+              "recall": 0.7666666666666667,
+              "f1-score": 0.7076923076923077,
+              "support": 30.0
+            },
+            "car": {
+              "precision": 0.8717948717948718,
+              "recall": 0.816,
+              "f1-score": 0.8429752066115702,
+              "support": 125.0
+            },
+            "cyclist": {
+              "precision": 0.8333333333333334,
+              "recall": 0.39473684210526316,
+              "f1-score": 0.5357142857142857,
+              "support": 114.0
+            },
+            "motorcycle": {
+              "precision": 0.3142857142857143,
+              "recall": 0.6285714285714286,
+              "f1-score": 0.41904761904761906,
+              "support": 35.0
+            },
+            "pedestrian": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "accuracy": 0.631578947368421,
+            "macro avg": {
+              "precision": 0.5353113553113553,
+              "recall": 0.5211949874686717,
+              "f1-score": 0.5010858838131564,
+              "support": 304.0
+            },
+            "weighted avg": {
+              "precision": 0.7720021206863312,
+              "recall": 0.631578947368421,
+              "f1-score": 0.6655946226819431,
+              "support": 304.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              23,
+              4,
+              0,
+              2,
+              1
+            ],
+            [
+              11,
+              102,
+              3,
+              2,
+              7
+            ],
+            [
+              1,
+              9,
+              45,
+              44,
+              15
+            ],
+            [
+              0,
+              2,
+              6,
+              22,
+              5
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 50,
+              "a_to_b": 44,
+              "b_to_a": 6
+            },
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 15,
+              "a_to_b": 4,
+              "b_to_a": 11
+            },
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 15,
+              "a_to_b": 15,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "car",
+                "cyclist"
+              ],
+              "errors": 12,
+              "a_to_b": 3,
+              "b_to_a": 9
+            },
+            {
+              "classes": [
+                "car",
+                "pedestrian"
+              ],
+              "errors": 7,
+              "a_to_b": 7,
+              "b_to_a": 0
+            }
+          ]
+        },
+        "kaggle": {
+          "accuracy": 0.7877094972067039,
+          "precision_weighted": 0.8754098915917449,
+          "recall_weighted": 0.7877094972067039,
+          "f1_weighted": 0.8116988841002569,
+          "f1_macro": 0.6432482403580418,
+          "per_class": {
+            "bus": {
+              "precision": 1.0,
+              "recall": 0.6513761467889908,
+              "f1-score": 0.7888888888888889,
+              "support": 109.0
+            },
+            "car": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "cyclist": {
+              "precision": 0.8620689655172413,
+              "recall": 0.8823529411764706,
+              "f1-score": 0.872093023255814,
+              "support": 85.0
+            },
+            "motorcycle": {
+              "precision": 0.9120879120879121,
+              "recall": 0.7685185185185185,
+              "f1-score": 0.8341708542713567,
+              "support": 108.0
+            },
+            "pedestrian": {
+              "precision": 0.5824175824175825,
+              "recall": 0.9464285714285714,
+              "f1-score": 0.7210884353741497,
+              "support": 56.0
+            },
+            "accuracy": 0.7877094972067039,
+            "macro avg": {
+              "precision": 0.6713148920045472,
+              "recall": 0.6497352355825102,
+              "f1-score": 0.6432482403580418,
+              "support": 358.0
+            },
+            "weighted avg": {
+              "precision": 0.8754098915917449,
+              "recall": 0.7877094972067039,
+              "f1-score": 0.8116988841002569,
+              "support": 358.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              71,
+              8,
+              3,
+              4,
+              23
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              75,
+              4,
+              5
+            ],
+            [
+              0,
+              9,
+              6,
+              83,
+              10
+            ],
+            [
+              0,
+              0,
+              3,
+              0,
+              53
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "bus",
+                "pedestrian"
+              ],
+              "errors": 23,
+              "a_to_b": 23,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 10,
+              "a_to_b": 4,
+              "b_to_a": 6
+            },
+            {
+              "classes": [
+                "motorcycle",
+                "pedestrian"
+              ],
+              "errors": 10,
+              "a_to_b": 10,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 9,
+              "a_to_b": 0,
+              "b_to_a": 9
+            },
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 8,
+              "a_to_b": 8,
+              "b_to_a": 0
+            }
+          ]
+        },
+        "original": {
+          "accuracy": 0.5463917525773195,
+          "precision_weighted": 0.596415182755389,
+          "recall_weighted": 0.5463917525773195,
+          "f1_weighted": 0.4826380967182593,
+          "f1_macro": 0.29135178913728027,
+          "per_class": {
+            "bus": {
+              "precision": 0.6666666666666666,
+              "recall": 0.06557377049180328,
+              "f1-score": 0.11940298507462686,
+              "support": 61.0
+            },
+            "car": {
+              "precision": 0.4727272727272727,
+              "recall": 0.6933333333333334,
+              "f1-score": 0.5621621621621622,
+              "support": 75.0
+            },
+            "cyclist": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 1.0
+            },
+            "motorcycle": {
+              "precision": 0.6944444444444444,
+              "recall": 0.8771929824561403,
+              "f1-score": 0.7751937984496124,
+              "support": 57.0
+            },
+            "pedestrian": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "accuracy": 0.5463917525773195,
+            "macro avg": {
+              "precision": 0.36676767676767674,
+              "recall": 0.3272200172562554,
+              "f1-score": 0.29135178913728027,
+              "support": 194.0
+            },
+            "weighted avg": {
+              "precision": 0.596415182755389,
+              "recall": 0.5463917525773195,
+              "f1-score": 0.4826380967182593,
+              "support": 194.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              4,
+              52,
+              0,
+              5,
+              0
+            ],
+            [
+              2,
+              52,
+              3,
+              16,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              6,
+              1,
+              50,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 54,
+              "a_to_b": 52,
+              "b_to_a": 2
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 22,
+              "a_to_b": 16,
+              "b_to_a": 6
+            },
+            {
+              "classes": [
+                "bus",
+                "motorcycle"
+              ],
+              "errors": 5,
+              "a_to_b": 5,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "car",
+                "cyclist"
+              ],
+              "errors": 3,
+              "a_to_b": 3,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "car",
+                "pedestrian"
+              ],
+              "errors": 2,
+              "a_to_b": 2,
+              "b_to_a": 0
+            }
+          ]
+        },
+        "penn_fudan": {
+          "accuracy": 0.9375,
+          "precision_weighted": 1.0,
+          "recall_weighted": 0.9375,
+          "f1_weighted": 0.9677419354838711,
+          "f1_macro": 0.1935483870967742,
+          "per_class": {
+            "bus": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "car": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "cyclist": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "motorcycle": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "pedestrian": {
+              "precision": 1.0,
+              "recall": 0.9375,
+              "f1-score": 0.967741935483871,
+              "support": 144.0
+            },
+            "accuracy": 0.9375,
+            "macro avg": {
+              "precision": 0.2,
+              "recall": 0.1875,
+              "f1-score": 0.1935483870967742,
+              "support": 144.0
+            },
+            "weighted avg": {
+              "precision": 1.0,
+              "recall": 0.9375,
+              "f1-score": 0.9677419354838711,
+              "support": 144.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              0,
+              6,
+              2,
+              135
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 6,
+              "a_to_b": 0,
+              "b_to_a": 6
+            },
+            {
+              "classes": [
+                "motorcycle",
+                "pedestrian"
+              ],
+              "errors": 2,
+              "a_to_b": 0,
+              "b_to_a": 2
+            },
+            {
+              "classes": [
+                "bus",
+                "pedestrian"
+              ],
+              "errors": 1,
+              "a_to_b": 0,
+              "b_to_a": 1
+            }
+          ]
+        }
+      }
+    },
+    "HistGradientBoosting": {
+      "accuracy": 0.794,
+      "precision_weighted": 0.8037536916952907,
+      "recall_weighted": 0.794,
+      "f1_weighted": 0.7917964113099013,
+      "f1_macro": 0.7917964113099012,
+      "per_class": {
+        "bus": {
+          "precision": 0.8689655172413793,
+          "recall": 0.63,
+          "f1-score": 0.7304347826086957,
+          "support": 200.0
+        },
+        "car": {
+          "precision": 0.6774193548387096,
+          "recall": 0.84,
+          "f1-score": 0.75,
+          "support": 200.0
+        },
+        "cyclist": {
+          "precision": 0.8439306358381503,
+          "recall": 0.73,
+          "f1-score": 0.7828418230563002,
+          "support": 200.0
+        },
+        "motorcycle": {
+          "precision": 0.7751196172248804,
+          "recall": 0.81,
+          "f1-score": 0.7921760391198044,
+          "support": 200.0
+        },
+        "pedestrian": {
+          "precision": 0.8533333333333334,
+          "recall": 0.96,
+          "f1-score": 0.9035294117647059,
+          "support": 200.0
+        },
+        "accuracy": 0.794,
+        "macro avg": {
+          "precision": 0.8037536916952905,
+          "recall": 0.794,
+          "f1-score": 0.7917964113099012,
+          "support": 1000.0
+        },
+        "weighted avg": {
+          "precision": 0.8037536916952907,
+          "recall": 0.794,
+          "f1-score": 0.7917964113099013,
+          "support": 1000.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          126,
+          59,
+          3,
+          3,
+          9
+        ],
+        [
+          15,
+          168,
+          3,
+          10,
+          4
+        ],
+        [
+          3,
+          7,
+          146,
+          29,
+          15
+        ],
+        [
+          1,
+          13,
+          19,
+          162,
+          5
+        ],
+        [
+          0,
+          1,
+          2,
+          5,
+          192
+        ]
+      ],
+      "most_confused_pairs": [
+        {
+          "classes": [
+            "bus",
+            "car"
+          ],
+          "errors": 74,
+          "a_to_b": 59,
+          "b_to_a": 15
+        },
+        {
+          "classes": [
+            "cyclist",
+            "motorcycle"
+          ],
+          "errors": 48,
+          "a_to_b": 29,
+          "b_to_a": 19
+        },
+        {
+          "classes": [
+            "car",
+            "motorcycle"
+          ],
+          "errors": 23,
+          "a_to_b": 10,
+          "b_to_a": 13
+        },
+        {
+          "classes": [
+            "cyclist",
+            "pedestrian"
+          ],
+          "errors": 17,
+          "a_to_b": 15,
+          "b_to_a": 2
+        },
+        {
+          "classes": [
+            "car",
+            "cyclist"
+          ],
+          "errors": 10,
+          "a_to_b": 3,
+          "b_to_a": 7
+        }
+      ],
+      "configuration": {
+        "selection": "Toutes",
+        "model": "HistGradientBoosting",
+        "balancing": "Sans_correction",
+        "parameters": {
+          "learning_rate": 0.1,
+          "max_leaf_nodes": 31
+        }
+      },
+      "fit_diagnostics": {
+        "fit_seconds": 126.493,
+        "fit_samples": 4000,
+        "convergence_warning": false,
+        "warnings": "",
+        "iterations": 100
+      },
+      "balanced_accuracy": 0.794,
+      "mcc": 0.7456589647090072,
+      "by_source": {
+        "coco": {
+          "accuracy": 0.7269736842105263,
+          "precision_weighted": 0.8039967755356772,
+          "recall_weighted": 0.7269736842105263,
+          "f1_weighted": 0.751495227544807,
+          "f1_macro": 0.5613140238913434,
+          "per_class": {
+            "bus": {
+              "precision": 0.575,
+              "recall": 0.7666666666666667,
+              "f1-score": 0.6571428571428571,
+              "support": 30.0
+            },
+            "car": {
+              "precision": 0.8869565217391304,
+              "recall": 0.816,
+              "f1-score": 0.85,
+              "support": 125.0
+            },
+            "cyclist": {
+              "precision": 0.875,
+              "recall": 0.6140350877192983,
+              "f1-score": 0.7216494845360825,
+              "support": 114.0
+            },
+            "motorcycle": {
+              "precision": 0.4727272727272727,
+              "recall": 0.7428571428571429,
+              "f1-score": 0.5777777777777777,
+              "support": 35.0
+            },
+            "pedestrian": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "accuracy": 0.7269736842105263,
+            "macro avg": {
+              "precision": 0.5619367588932807,
+              "recall": 0.5879117794486215,
+              "f1-score": 0.5613140238913434,
+              "support": 304.0
+            },
+            "weighted avg": {
+              "precision": 0.8039967755356772,
+              "recall": 0.7269736842105263,
+              "f1-score": 0.751495227544807,
+              "support": 304.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              23,
+              6,
+              0,
+              1,
+              0
+            ],
+            [
+              14,
+              102,
+              2,
+              4,
+              3
+            ],
+            [
+              3,
+              6,
+              70,
+              24,
+              11
+            ],
+            [
+              0,
+              1,
+              8,
+              26,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 32,
+              "a_to_b": 24,
+              "b_to_a": 8
+            },
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 20,
+              "a_to_b": 6,
+              "b_to_a": 14
+            },
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 11,
+              "a_to_b": 11,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "car",
+                "cyclist"
+              ],
+              "errors": 8,
+              "a_to_b": 2,
+              "b_to_a": 6
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 5,
+              "a_to_b": 4,
+              "b_to_a": 1
+            }
+          ]
+        },
+        "kaggle": {
+          "accuracy": 0.8770949720670391,
+          "precision_weighted": 0.91484987607985,
+          "recall_weighted": 0.8770949720670391,
+          "f1_weighted": 0.8913763235811836,
+          "f1_macro": 0.7070011917739756,
+          "per_class": {
+            "bus": {
+              "precision": 1.0,
+              "recall": 0.8899082568807339,
+              "f1-score": 0.941747572815534,
+              "support": 109.0
+            },
+            "car": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "cyclist": {
+              "precision": 0.8636363636363636,
+              "recall": 0.8941176470588236,
+              "f1-score": 0.8786127167630058,
+              "support": 85.0
+            },
+            "motorcycle": {
+              "precision": 0.9565217391304348,
+              "recall": 0.8148148148148148,
+              "f1-score": 0.88,
+              "support": 108.0
+            },
+            "pedestrian": {
+              "precision": 0.7464788732394366,
+              "recall": 0.9464285714285714,
+              "f1-score": 0.8346456692913385,
+              "support": 56.0
+            },
+            "accuracy": 0.8770949720670391,
+            "macro avg": {
+              "precision": 0.7133273952012471,
+              "recall": 0.7090538580365887,
+              "f1-score": 0.7070011917739756,
+              "support": 358.0
+            },
+            "weighted avg": {
+              "precision": 0.91484987607985,
+              "recall": 0.8770949720670391,
+              "f1-score": 0.8913763235811836,
+              "support": 358.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              97,
+              2,
+              1,
+              0,
+              9
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              76,
+              4,
+              4
+            ],
+            [
+              0,
+              6,
+              9,
+              88,
+              5
+            ],
+            [
+              0,
+              1,
+              2,
+              0,
+              53
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 13,
+              "a_to_b": 4,
+              "b_to_a": 9
+            },
+            {
+              "classes": [
+                "bus",
+                "pedestrian"
+              ],
+              "errors": 9,
+              "a_to_b": 9,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 6,
+              "a_to_b": 0,
+              "b_to_a": 6
+            },
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 6,
+              "a_to_b": 4,
+              "b_to_a": 2
+            },
+            {
+              "classes": [
+                "motorcycle",
+                "pedestrian"
+              ],
+              "errors": 5,
+              "a_to_b": 5,
+              "b_to_a": 0
+            }
+          ]
+        },
+        "original": {
+          "accuracy": 0.6185567010309279,
+          "precision_weighted": 0.6906902187578577,
+          "recall_weighted": 0.6185567010309279,
+          "f1_weighted": 0.5598386373823397,
+          "f1_macro": 0.3365369946605644,
+          "per_class": {
+            "bus": {
+              "precision": 0.75,
+              "recall": 0.09836065573770492,
+              "f1-score": 0.17391304347826086,
+              "support": 61.0
+            },
+            "car": {
+              "precision": 0.5365853658536586,
+              "recall": 0.88,
+              "f1-score": 0.6666666666666666,
+              "support": 75.0
+            },
+            "cyclist": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 1.0
+            },
+            "motorcycle": {
+              "precision": 0.8421052631578947,
+              "recall": 0.8421052631578947,
+              "f1-score": 0.8421052631578947,
+              "support": 57.0
+            },
+            "pedestrian": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "accuracy": 0.6185567010309279,
+            "macro avg": {
+              "precision": 0.42573812580231063,
+              "recall": 0.3640931837791199,
+              "f1-score": 0.3365369946605644,
+              "support": 194.0
+            },
+            "weighted avg": {
+              "precision": 0.6906902187578577,
+              "recall": 0.6185567010309279,
+              "f1-score": 0.5598386373823397,
+              "support": 194.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              6,
+              51,
+              2,
+              2,
+              0
+            ],
+            [
+              1,
+              66,
+              1,
+              6,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              6,
+              2,
+              48,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 52,
+              "a_to_b": 51,
+              "b_to_a": 1
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 12,
+              "a_to_b": 6,
+              "b_to_a": 6
+            },
+            {
+              "classes": [
+                "bus",
+                "motorcycle"
+              ],
+              "errors": 3,
+              "a_to_b": 2,
+              "b_to_a": 1
+            },
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 3,
+              "a_to_b": 1,
+              "b_to_a": 2
+            },
+            {
+              "classes": [
+                "bus",
+                "cyclist"
+              ],
+              "errors": 2,
+              "a_to_b": 2,
+              "b_to_a": 0
+            }
+          ]
+        },
+        "penn_fudan": {
+          "accuracy": 0.9652777777777778,
+          "precision_weighted": 1.0,
+          "recall_weighted": 0.9652777777777778,
+          "f1_weighted": 0.9823321554770319,
+          "f1_macro": 0.19646643109540635,
+          "per_class": {
+            "bus": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "car": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "cyclist": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "motorcycle": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "pedestrian": {
+              "precision": 1.0,
+              "recall": 0.9652777777777778,
+              "f1-score": 0.9823321554770318,
+              "support": 144.0
+            },
+            "accuracy": 0.9652777777777778,
+            "macro avg": {
+              "precision": 0.2,
+              "recall": 0.19305555555555556,
+              "f1-score": 0.19646643109540635,
+              "support": 144.0
+            },
+            "weighted avg": {
+              "precision": 1.0,
+              "recall": 0.9652777777777778,
+              "f1-score": 0.9823321554770319,
+              "support": 144.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              5,
+              139
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "motorcycle",
+                "pedestrian"
+              ],
+              "errors": 5,
+              "a_to_b": 0,
+              "b_to_a": 5
+            }
+          ]
+        }
+      }
+    },
+    "MLP": {
+      "accuracy": 0.805,
+      "precision_weighted": 0.8094162885517847,
+      "recall_weighted": 0.805,
+      "f1_weighted": 0.8036879474621837,
+      "f1_macro": 0.8036879474621837,
+      "per_class": {
+        "bus": {
+          "precision": 0.8903225806451613,
+          "recall": 0.69,
+          "f1-score": 0.7774647887323943,
+          "support": 200.0
+        },
+        "car": {
+          "precision": 0.7300884955752213,
+          "recall": 0.825,
+          "f1-score": 0.7746478873239436,
+          "support": 200.0
+        },
+        "cyclist": {
+          "precision": 0.7669902912621359,
+          "recall": 0.79,
+          "f1-score": 0.7783251231527094,
+          "support": 200.0
+        },
+        "motorcycle": {
+          "precision": 0.7743589743589744,
+          "recall": 0.755,
+          "f1-score": 0.7645569620253164,
+          "support": 200.0
+        },
+        "pedestrian": {
+          "precision": 0.8853211009174312,
+          "recall": 0.965,
+          "f1-score": 0.9234449760765551,
+          "support": 200.0
+        },
+        "accuracy": 0.805,
+        "macro avg": {
+          "precision": 0.8094162885517848,
+          "recall": 0.8049999999999999,
+          "f1-score": 0.8036879474621837,
+          "support": 1000.0
+        },
+        "weighted avg": {
+          "precision": 0.8094162885517847,
+          "recall": 0.805,
+          "f1-score": 0.8036879474621837,
+          "support": 1000.0
+        }
+      },
+      "confusion_matrix": [
+        [
+          138,
+          43,
+          5,
+          7,
+          7
+        ],
+        [
+          14,
+          165,
+          9,
+          10,
+          2
+        ],
+        [
+          1,
+          6,
+          158,
+          23,
+          12
+        ],
+        [
+          2,
+          11,
+          32,
+          151,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          4,
+          193
+        ]
+      ],
+      "most_confused_pairs": [
+        {
+          "classes": [
+            "bus",
+            "car"
+          ],
+          "errors": 57,
+          "a_to_b": 43,
+          "b_to_a": 14
+        },
+        {
+          "classes": [
+            "cyclist",
+            "motorcycle"
+          ],
+          "errors": 55,
+          "a_to_b": 23,
+          "b_to_a": 32
+        },
+        {
+          "classes": [
+            "car",
+            "motorcycle"
+          ],
+          "errors": 21,
+          "a_to_b": 10,
+          "b_to_a": 11
+        },
+        {
+          "classes": [
+            "car",
+            "cyclist"
+          ],
+          "errors": 15,
+          "a_to_b": 9,
+          "b_to_a": 6
+        },
+        {
+          "classes": [
+            "cyclist",
+            "pedestrian"
+          ],
+          "errors": 14,
+          "a_to_b": 12,
+          "b_to_a": 2
+        }
+      ],
+      "configuration": {
+        "selection": "Toutes",
+        "model": "MLP",
+        "balancing": "Correction_train",
+        "parameters": {
+          "alpha": 0.01
+        }
+      },
+      "fit_diagnostics": {
+        "fit_seconds": 7.066,
+        "fit_samples": 4000,
+        "convergence_warning": false,
+        "warnings": "",
+        "iterations": 30
+      },
+      "balanced_accuracy": 0.8049999999999999,
+      "mcc": 0.7577128507607166,
+      "by_source": {
+        "coco": {
+          "accuracy": 0.7598684210526315,
+          "precision_weighted": 0.8071120291515029,
+          "recall_weighted": 0.7598684210526315,
+          "f1_weighted": 0.7778845543076223,
+          "f1_macro": 0.5863587708105306,
+          "per_class": {
+            "bus": {
+              "precision": 0.6486486486486487,
+              "recall": 0.8,
+              "f1-score": 0.7164179104477612,
+              "support": 30.0
+            },
+            "car": {
+              "precision": 0.9181818181818182,
+              "recall": 0.808,
+              "f1-score": 0.8595744680851064,
+              "support": 125.0
+            },
+            "cyclist": {
+              "precision": 0.8181818181818182,
+              "recall": 0.7105263157894737,
+              "f1-score": 0.7605633802816901,
+              "support": 114.0
+            },
+            "motorcycle": {
+              "precision": 0.5102040816326531,
+              "recall": 0.7142857142857143,
+              "f1-score": 0.5952380952380952,
+              "support": 35.0
+            },
+            "pedestrian": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "accuracy": 0.7598684210526315,
+            "macro avg": {
+              "precision": 0.5790432733289876,
+              "recall": 0.6065624060150376,
+              "f1-score": 0.5863587708105306,
+              "support": 304.0
+            },
+            "weighted avg": {
+              "precision": 0.8071120291515029,
+              "recall": 0.7598684210526315,
+              "f1-score": 0.7778845543076223,
+              "support": 304.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              24,
+              4,
+              1,
+              1,
+              0
+            ],
+            [
+              12,
+              101,
+              7,
+              4,
+              1
+            ],
+            [
+              1,
+              5,
+              81,
+              19,
+              8
+            ],
+            [
+              0,
+              0,
+              10,
+              25,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 29,
+              "a_to_b": 19,
+              "b_to_a": 10
+            },
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 16,
+              "a_to_b": 4,
+              "b_to_a": 12
+            },
+            {
+              "classes": [
+                "car",
+                "cyclist"
+              ],
+              "errors": 12,
+              "a_to_b": 7,
+              "b_to_a": 5
+            },
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 8,
+              "a_to_b": 8,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 4,
+              "a_to_b": 4,
+              "b_to_a": 0
+            }
+          ]
+        },
+        "kaggle": {
+          "accuracy": 0.8715083798882681,
+          "precision_weighted": 0.9089654789744922,
+          "recall_weighted": 0.8715083798882681,
+          "f1_weighted": 0.8834418643819917,
+          "f1_macro": 0.7042524556411917,
+          "per_class": {
+            "bus": {
+              "precision": 1.0,
+              "recall": 0.8899082568807339,
+              "f1-score": 0.941747572815534,
+              "support": 109.0
+            },
+            "car": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "cyclist": {
+              "precision": 0.8020833333333334,
+              "recall": 0.9058823529411765,
+              "f1-score": 0.850828729281768,
+              "support": 85.0
+            },
+            "motorcycle": {
+              "precision": 0.9651162790697675,
+              "recall": 0.7685185185185185,
+              "f1-score": 0.8556701030927835,
+              "support": 108.0
+            },
+            "pedestrian": {
+              "precision": 0.7857142857142857,
+              "recall": 0.9821428571428571,
+              "f1-score": 0.873015873015873,
+              "support": 56.0
+            },
+            "accuracy": 0.8715083798882681,
+            "macro avg": {
+              "precision": 0.7105827796234773,
+              "recall": 0.7092903970966573,
+              "f1-score": 0.7042524556411917,
+              "support": 358.0
+            },
+            "weighted avg": {
+              "precision": 0.9089654789744922,
+              "recall": 0.8715083798882681,
+              "f1-score": 0.8834418643819917,
+              "support": 358.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              97,
+              3,
+              2,
+              0,
+              7
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              77,
+              3,
+              4
+            ],
+            [
+              0,
+              4,
+              17,
+              83,
+              4
+            ],
+            [
+              0,
+              1,
+              0,
+              0,
+              55
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 20,
+              "a_to_b": 3,
+              "b_to_a": 17
+            },
+            {
+              "classes": [
+                "bus",
+                "pedestrian"
+              ],
+              "errors": 7,
+              "a_to_b": 7,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 4,
+              "a_to_b": 0,
+              "b_to_a": 4
+            },
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 4,
+              "a_to_b": 4,
+              "b_to_a": 0
+            },
+            {
+              "classes": [
+                "motorcycle",
+                "pedestrian"
+              ],
+              "errors": 4,
+              "a_to_b": 4,
+              "b_to_a": 0
+            }
+          ]
+        },
+        "original": {
+          "accuracy": 0.6391752577319587,
+          "precision_weighted": 0.7113846526181529,
+          "recall_weighted": 0.6391752577319587,
+          "f1_weighted": 0.6258786940594502,
+          "f1_macro": 0.3757985593081643,
+          "per_class": {
+            "bus": {
+              "precision": 0.8095238095238095,
+              "recall": 0.2786885245901639,
+              "f1-score": 0.4146341463414634,
+              "support": 61.0
+            },
+            "car": {
+              "precision": 0.5981308411214953,
+              "recall": 0.8533333333333334,
+              "f1-score": 0.7032967032967034,
+              "support": 75.0
+            },
+            "cyclist": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 1.0
+            },
+            "motorcycle": {
+              "precision": 0.7678571428571429,
+              "recall": 0.7543859649122807,
+              "f1-score": 0.7610619469026548,
+              "support": 57.0
+            },
+            "pedestrian": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "accuracy": 0.6391752577319587,
+            "macro avg": {
+              "precision": 0.4351023587004895,
+              "recall": 0.37728156456715556,
+              "f1-score": 0.3757985593081643,
+              "support": 194.0
+            },
+            "weighted avg": {
+              "precision": 0.7113846526181529,
+              "recall": 0.6391752577319587,
+              "f1-score": 0.6258786940594502,
+              "support": 194.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              17,
+              36,
+              2,
+              6,
+              0
+            ],
+            [
+              2,
+              64,
+              2,
+              6,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              2,
+              7,
+              5,
+              43,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "bus",
+                "car"
+              ],
+              "errors": 38,
+              "a_to_b": 36,
+              "b_to_a": 2
+            },
+            {
+              "classes": [
+                "car",
+                "motorcycle"
+              ],
+              "errors": 13,
+              "a_to_b": 6,
+              "b_to_a": 7
+            },
+            {
+              "classes": [
+                "bus",
+                "motorcycle"
+              ],
+              "errors": 8,
+              "a_to_b": 6,
+              "b_to_a": 2
+            },
+            {
+              "classes": [
+                "cyclist",
+                "motorcycle"
+              ],
+              "errors": 6,
+              "a_to_b": 1,
+              "b_to_a": 5
+            },
+            {
+              "classes": [
+                "bus",
+                "cyclist"
+              ],
+              "errors": 2,
+              "a_to_b": 2,
+              "b_to_a": 0
+            }
+          ]
+        },
+        "penn_fudan": {
+          "accuracy": 0.9583333333333334,
+          "precision_weighted": 1.0,
+          "recall_weighted": 0.9583333333333334,
+          "f1_weighted": 0.978723404255319,
+          "f1_macro": 0.19574468085106383,
+          "per_class": {
+            "bus": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "car": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "cyclist": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "motorcycle": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1-score": 0.0,
+              "support": 0.0
+            },
+            "pedestrian": {
+              "precision": 1.0,
+              "recall": 0.9583333333333334,
+              "f1-score": 0.9787234042553191,
+              "support": 144.0
+            },
+            "accuracy": 0.9583333333333334,
+            "macro avg": {
+              "precision": 0.2,
+              "recall": 0.19166666666666668,
+              "f1-score": 0.19574468085106383,
+              "support": 144.0
+            },
+            "weighted avg": {
+              "precision": 1.0,
+              "recall": 0.9583333333333334,
+              "f1-score": 0.978723404255319,
+              "support": 144.0
+            }
+          },
+          "confusion_matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              2,
+              4,
+              138
+            ]
+          ],
+          "most_confused_pairs": [
+            {
+              "classes": [
+                "motorcycle",
+                "pedestrian"
+              ],
+              "errors": 4,
+              "a_to_b": 0,
+              "b_to_a": 4
+            },
+            {
+              "classes": [
+                "cyclist",
+                "pedestrian"
+              ],
+              "errors": 2,
+              "a_to_b": 0,
+              "b_to_a": 2
+            }
+          ]
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Les étiquettes et les relations entre sources ne sont pas certifiées exhaustivement.",
+    "Le pHash signale des ressemblances, sans prouver que deux objets sont identiques.",
+    "Les groupes source sont indivisibles : 15 % par classe n'est pas toujours réalisable.",
+    "Quelques grands groupes de piétons limitent la représentativité de la validation ; l'écart de domaine entre sources peut influencer les scores.",
+    "Les images apparentées restent dans leur groupe ; les observations du test ne sont donc pas toutes indépendantes. Les scores ne prouvent pas une robustesse en circulation réelle.",
+    "Les probabilités éventuellement fournies ne sont pas calibrées pour un usage réel.",
+    "Les photos de produit, les fonds et les recadrages peuvent créer des raccourcis visuels.",
+    "Les explications des confusions sont des hypothèses à vérifier sur les images."
+  ],
+  "benchmark_count": 60,
+  "cv_count": 30,
+  "model_catalog": [
+    {
+      "model": "SVM",
+      "principle": "Frontières non linéaires, noyau RBF",
+      "balancing": "Poids de classes calculés sur le train"
+    },
+    {
+      "model": "SGD",
+      "principle": "Séparateur linéaire à marge, descente de gradient stochastique",
+      "balancing": "Poids de classes calculés sur le train"
+    },
+    {
+      "model": "LogisticRegression",
+      "principle": "Régression logistique multiclasse",
+      "balancing": "Poids de classes calculés sur le train"
+    },
+    {
+      "model": "RandomForest",
+      "principle": "Vote d'arbres ajustés sur échantillons bootstrap",
+      "balancing": "Poids de classes calculés sur le train"
+    },
+    {
+      "model": "ExtraTrees",
+      "principle": "Ensemble d'arbres avec seuils aléatoires",
+      "balancing": "Poids de classes calculés sur le train"
+    },
+    {
+      "model": "kNN",
+      "principle": "Vote des cinq voisins pondéré par distance",
+      "balancing": "Suréchantillonnage du train en mémoire"
+    },
+    {
+      "model": "DecisionTree",
+      "principle": "Règles de décision hiérarchiques",
+      "balancing": "Poids de classes calculés sur le train"
+    },
+    {
+      "model": "GaussianNB",
+      "principle": "Modèle bayésien naïf gaussien",
+      "balancing": "Suréchantillonnage du train en mémoire"
+    },
+    {
+      "model": "HistGradientBoosting",
+      "principle": "Arbres construits par boosting sur histogrammes",
+      "balancing": "Suréchantillonnage du train en mémoire"
+    },
+    {
+      "model": "MLP",
+      "principle": "Réseau de neurones dense, une couche cachée",
+      "balancing": "Suréchantillonnage du train en mémoire"
+    }
+  ],
+  "test_history": "Le test a déjà été évalué dans les versions antérieures du projet. Les nouvelles décisions utilisent uniquement le développement. Ces résultats restent exploratoires et demandent un nouveau test externe.",
+  "cv_note": "La validation croisée règle les paramètres de trois familles présélectionnées sur une validation issue du même développement. Elle n'est pas imbriquée et ne fournit pas une estimation indépendante de généralisation.",
+  "bootstrap_note": "Intervalles percentile 95 % sur 1 000 tirages de groupes entiers, avec cinq classes fixes ; les tirages sans certaines classes sont inclus. Seulement trois groupes de piétons : interprétation exploratoire, sans conclusion de significativité statistique.",
+  "timing_note": "Les temps de benchmark bénéficient d'un cache partagé des prétraitements ; ils décrivent cette exécution, pas un classement universel de vitesse. L'inférence est mesurée en batch, hors lecture d'image et extraction HOG/HSV.",
+  "design": "60 configurations, puis réglage de trois familles sur trois plis groupés ; ablation HOG/HSV et apprentissage par groupes après sélection ; dix finalistes sur le test existant, avec bootstrap par groupes."
+}
