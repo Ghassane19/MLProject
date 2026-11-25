@@ -4,6 +4,12 @@ Projet PACTE — 5 000 images RGB PNG de 128 × 128 pixels, réparties en cinq c
 `bus`, `car`, `cyclist`, `motorcycle` et `pedestrian`.
 Le jeu initial contient 800 images d’entraînement et 200 images test par classe.
 
+## Équipe du projet
+
+- [Ghassane19](https://github.com/Ghassane19)
+- [Kimberly-SOKPOH](https://github.com/Kimberly-SOKPOH)
+- [zouher11](https://github.com/zouher11)
+
 ## Les deux notebooks à utiliser
 
 - [Nettoyage_des_donnees.ipynb](notebooks/Nettoyage_des_donnees.ipynb) : contrôle de qualité initial, analyse des images et nettoyage en mémoire.
